@@ -101,7 +101,8 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 
 | 我想要... | 使用這個檔案 |
 |----------|-------------|
-| 建立新專案的 README | [create-readme.prompt.md](#create-readmepromptmd) |
+| 建立繁中雙語 README (推薦) | [create-readme-comprehensive.prompt.md](#create-readme-comprehensivepromptmd-推薦) |
+| 建立英文 README (快速) | [create-readme-quick.prompt.md](#create-readme-quickpromptmd) |
 | 設定 Copilot 指令 | [copilot-instructions-blueprint-generator.prompt.md](#copilot-instructions-blueprint-generatorpromptmd) |
 | 追蹤專案進度 | [memory-bank.instructions.md](#memory-bankinstructionsmd) |
 | 提升程式碼安全性 | [security-and-owasp.instructions.md](#security-and-owaspinstructionsmd) |
@@ -349,18 +350,131 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 
 #### 文件與藍圖產生
 
-##### create-readme.prompt.md
+##### create-readme-comprehensive.prompt.md ⭐ 推薦
 
-[查看完整檔案](.github/prompts/create-readme.prompt.md)
+[查看完整檔案](.github/prompts/create-readme-comprehensive.prompt.md)
 
-- **用途**: 為專案建立高品質的 README.md 檔案
+- **用途**: 智慧型雙語 README 產生器,支援複雜度自動偵測與深度調整 (繁中優先)
 - **功能**:
-  - 審查整個專案和工作區
-  - 參考優秀 README 範例的結構和語調
+  - **智慧複雜度偵測**: 自動分析專案規模 (檔案數、目錄深度、相依套件、Monorepo 等)
+  - **自動深度調整**: 根據複雜度選擇適當深度 (Minimal/Standard/Comprehensive)
+  - **雙語支援**: 繁體中文為主,英文為輔
+    - H1-H2 標題雙語: `專案名稱 / Project Name`
+    - 程式碼註解雙語: `// 繁中 (English)`
+    - 錯誤訊息雙語: `'繁中 / English'`
+  - **Mermaid 圖表**: 自動產生架構圖、資料流程圖、時序圖
+  - **Monorepo 支援**: 自動偵測並適配 Monorepo 架構
+  - **情境調整**: 公開專案、企業專案等不同規則
+  - **GFM 完整支援**: GitHub admonitions, tables, task lists
+- **三種深度級別**:
+  - **Minimal** (小型專案): 5 核心章節, 500-1000 字, 無圖表
+  - **Standard** (中型專案): 10+ 章節, 1500-3000 字, 1-2 圖表
+  - **Comprehensive** (大型專案): 20+ 章節, 3000-6000 字, 5-10 圖表
+- **使用方式**:
+  ```bash
+  # 在 GitHub Copilot Chat 中使用
+  @workspace /create-readme-comprehensive
+  ```
+- **使用時機**: 
+  - 繁體中文專案
+  - 需要雙語文件
+  - 中大型專案或 Monorepo
+  - 需要架構圖和詳細文件
+  - 企業級專案
+
+**複雜度偵測原理:**
+
+使用多指標加權算法自動偵測專案複雜度:
+
+```python
+complexity_score = (
+    file_count_score      * 30% +  # 檔案數量
+    directory_depth_score * 15% +  # 目錄深度
+    dependency_count      * 25% +  # 相依套件數量
+    language_diversity    * 15% +  # 程式語言多樣性
+    monorepo_bonus        * 10% +  # Monorepo 加成
+    config_complexity     * 5%     # 配置檔複雜度
+)
+```
+
+**級別對應表:**
+
+| 分數範圍 | 複雜度級別 | 自動深度 | 範例 |
+|---------|----------|---------|------|
+| 0-34 | SMALL (小型) | Minimal | 個人工具、簡單腳本 |
+| 35-64 | MEDIUM (中型) | Standard | 團隊專案、API 服務 |
+| 65-100 | LARGE (大型) | Comprehensive | 企業平台、Monorepo |
+
+**判斷指標:**
+
+| 指標 | SMALL | MEDIUM | LARGE |
+|------|-------|--------|-------|
+| 程式碼檔案數 | < 20 | 20-100 | > 100 |
+| 目錄深度 | < 3 層 | 3-5 層 | > 5 層 |
+| 相依套件 | < 10 個 | 10-50 個 | > 50 個 |
+| 程式語言 | 1 種 | 2-3 種 | > 3 種 |
+| Monorepo | ❌ | 可能 | ✅ |
+
+**雙語策略範例:**
+
+標題雙語:
+```markdown
+# H1 標題使用雙語 / H1 Title Uses Bilingual
+## H2 標題也是雙語 / H2 Title Also Bilingual
+### H3 標題僅繁中
+```
+
+程式碼註解雙語:
+```typescript
+// 使用者介面 (User interface)
+interface User {
+  id: string;     // ID
+  name: string;   // 姓名 (Name)
+}
+
+// 建立使用者 (Create user)
+function createUser(data: User): void {
+  if (!data.name) {
+    throw new Error('姓名為必填 / Name is required');
+  }
+}
+```
+
+##### create-readme-quick.prompt.md
+
+[查看完整檔案](.github/prompts/create-readme-quick.prompt.md)
+
+- **用途**: 快速產生英文 README (簡潔版)
+- **功能**:
+  - 純英文輸出
+  - 參考優秀開源專案範例 (Azure Samples, sinedied 專案)
   - 使用 GFM (GitHub Flavored Markdown) 格式
-  - 包含專案概述、安裝、使用、貢獻等標準章節
-  - 自動偵測技術堆疊和相依性
-- **使用時機**: 需要為新專案或現有專案建立或更新 README 時
+  - 簡潔明瞭的結構
+  - 自動偵測 Logo/Icon
+  - 適度使用 emoji
+- **使用方式**:
+  ```bash
+  # 在 GitHub Copilot Chat 中使用
+  @workspace /create-readme-quick
+  ```
+- **使用時機**: 
+  - 國際開源專案
+  - 需要快速產生英文文件
+  - 小型簡單專案
+  - 追求簡潔性
+
+**選擇建議:**
+
+| 需求 | 推薦 Prompt |
+|------|------------|
+| 英文國際開源專案 | `create-readme-quick` |
+| 繁體中文專案 | `create-readme-comprehensive` ⭐ |
+| 需要雙語文件 | `create-readme-comprehensive` ⭐ |
+| 小型簡單專案 | `create-readme-quick` |
+| 中大型專案 | `create-readme-comprehensive` ⭐ |
+| 需要架構圖 | `create-readme-comprehensive` ⭐ |
+| Monorepo 專案 | `create-readme-comprehensive` ⭐ |
+| 企業專案 | `create-readme-comprehensive` ⭐ |
 
 ##### copilot-instructions-blueprint-generator.prompt.md
 
@@ -568,8 +682,14 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 
 **步驟 1**: 建立專案 README
 
+繁體中文專案 (推薦):
 ```markdown
-Follow instructions in [create-readme.prompt.md](file:///.github/prompts/create-readme.prompt.md)
+Follow instructions in [create-readme-comprehensive.prompt.md](file:///.github/prompts/create-readme-comprehensive.prompt.md)
+```
+
+英文國際專案 (快速):
+```markdown
+Follow instructions in [create-readme-quick.prompt.md](file:///.github/prompts/create-readme-quick.prompt.md)
 ```
 
 **步驟 2**: 產生 Copilot 指令檔案
