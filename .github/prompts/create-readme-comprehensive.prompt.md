@@ -24,10 +24,15 @@ ${MANUAL_COMPLEXITY=null}           # 手動覆寫: SMALL | MEDIUM | LARGE
 # 語言策略 (繁中優先 + 英文參考)
 ${LANGUAGE_PRIMARY="zh-TW"}         # 主要語言: 繁體中文
 ${LANGUAGE_SECONDARY="en"}          # 次要語言: 英文 (參考用)
-${BILINGUAL_HEADERS=true}           # H1-H2 雙語標題
+${BILINGUAL_HEADERS=true}           # H1-H3 雙語標題
 
 # 內容深度 (自動根據複雜度調整)
 ${DEPTH_LEVEL="Auto"}               # Auto | Minimal | Standard | Comprehensive
+
+# 目錄設定
+${INCLUDE_TOC="Auto"}               # Auto | Always | Never
+${TOC_STYLE="Categorized"}          # Simple | Categorized | Hybrid
+${TOC_DEPTH=3}                      # 1-4 (TOC 包含的標題深度,預設僅 H3)
 
 # 視覺元素
 ${INCLUDE_DIAGRAMS=true}            # 生成 Mermaid 架構圖
@@ -161,6 +166,8 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 # 專案標題 / Project Title
 一句話描述專案解決的問題
 
+<!-- ❌ 不包含 TOC (章節少於 6 個,無需目錄) -->
+
 ## 快速開始 / Quick Start
 3-5 步驟快速啟動
 
@@ -194,7 +201,23 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 **必要章節:**
 ```markdown
 # 專案概述 / Project Overview
-包含背景、目標、解決的問題
+
+[徽章區塊 - 如啟用]
+
+專案一句話描述
+
+## 目錄 / Table of Contents
+
+- [功能特色 / Features](#功能特色--features)
+- [環境需求 / Prerequisites](#環境需求--prerequisites)
+- [安裝 / Installation](#安裝--installation)
+- [配置 / Configuration](#配置--configuration)
+- [使用方式 / Usage](#使用方式--usage)
+- [專案結構 / Project Structure](#專案結構--project-structure)
+- [技術堆疊 / Technology Stack](#技術堆疊--technology-stack)
+- [API 概覽 / API Overview](#api-概覽--api-overview)
+- [貢獻 / Contributing](#貢獻--contributing)
+- [授權 / License](#授權--license)
 
 ## 功能特色 / Features
 列表展示核心功能
@@ -227,6 +250,13 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 授權資訊
 ```
 
+**TOC 格式要求:**
+- 使用簡單項目列表格式
+- 僅包含 H3 標題 (不包含 H5 及以下)
+- 錨點使用小寫英文 slug,雙語標題用 `--` 分隔
+- 標題顯示為完整雙語 `繁中 / English`
+- 位置: H1 標題後、徽章後、第一個實質 H2 章節前
+
 **可選章節:**
 - 架構圖 / Architecture (1-2 個 Mermaid 圖表)
 - 使用範例 / Examples (3-5 個)
@@ -243,8 +273,57 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 
 **必要章節:**
 ```markdown
-# 執行摘要 / Executive Summary
-專案高層級概述
+# 專案名稱 / Project Name
+
+[Logo 與徽章區塊 - 如啟用]
+
+專案執行摘要 (2-3 段簡介)
+
+## 目錄 / Table of Contents
+
+### 📋 核心文件
+- [專案概述 / Project Overview](#專案概述--project-overview)
+- [功能詳細說明 / Detailed Features](#功能詳細說明--detailed-features)
+- [架構設計 / Architecture Design](#架構設計--architecture-design)
+- [完整技術堆疊 / Complete Technology Stack](#完整技術堆疊--complete-technology-stack)
+
+### ⚙️ 安裝與配置
+- [環境需求 / Prerequisites](#環境需求--prerequisites)
+- [安裝指南 / Installation Guide](#安裝指南--installation-guide)
+- [配置參考 / Configuration Reference](#配置參考--configuration-reference)
+
+### 📖 使用指南
+- [使用指南 / Usage Guide](#使用指南--usage-guide)
+- [API 文件 / API Documentation](#api-文件--api-documentation)
+
+### 🔧 開發與測試
+- [專案結構 / Project Structure](#專案結構--project-structure)
+- [開發指南 / Development Guide](#開發指南--development-guide)
+- [測試策略 / Testing Strategy](#測試策略--testing-strategy)
+
+### 🚀 部署與維運
+- [部署指南 / Deployment Guide](#部署指南--deployment-guide)
+
+### 📚 進階主題
+- [效能考量 / Performance Considerations](#效能考量--performance-considerations)
+- [安全最佳實踐 / Security Best Practices](#安全最佳實踐--security-best-practices)
+- [問題排解 / Troubleshooting](#問題排解--troubleshooting)
+
+### 🤝 社群與支援
+- [貢獻指南 / Contributing](#貢獻指南--contributing)
+- [授權 / License](#授權--license)
+
+### 🔍 快速查找
+
+| 我想要... | 前往章節 |
+|----------|----------|
+| 了解專案背景與目標 | [專案概述](#專案概述--project-overview) |
+| 查看系統架構圖 | [架構設計](#架構設計--architecture-design) |
+| 快速啟動專案 | [安裝指南](#安裝指南--installation-guide) |
+| 配置環境變數 | [配置參考](#配置參考--configuration-reference) |
+| 查看 API 文件 | [API 文件](#api-文件--api-documentation) |
+| 部署到生產環境 | [部署指南](#部署指南--deployment-guide) |
+| 回報問題或貢獻 | [貢獻指南](#貢獻指南--contributing) |
 
 ## 專案概述 / Project Overview
 詳細背景與目標
@@ -309,6 +388,14 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 感謝貢獻者與專案
 ```
 
+**TOC 格式要求:**
+- **分類式結構 + 快速查找表格** (混合式 Hybrid 格式)
+- 使用 H3 標題分類,配合 emoji 圖標 (📋 ⚙️ 📖 🔧 🚀 📚 🤝 🔍)
+- 分類項目僅列出 H3 級別章節
+- 快速查找表格提供任務導向的導航
+- 錨點格式: `#小寫英文slug` 或 `#繁中--english` (雙語標題)
+- 位置: H1 標題後、第一個實質 H2 章節前
+
 **可選章節:**
 - 專案路線圖 / Roadmap
 - 遷移指南 / Migration Guides
@@ -338,7 +425,7 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 
 #### 4.1 雙語標題策略
 
-**H1-H2 標題使用雙語:**
+**H1-H3 標題使用雙語:**
 ```markdown
 # 專案名稱 / Project Name
 
@@ -452,7 +539,76 @@ graph TD
 
 **使用 GitHub Flavored Markdown:**
 
-1. **Admonitions (提示框):**
+1. **目錄 (Table of Contents):**
+
+**錨點生成規則 (GFM 標準):**
+
+GitHub 自動為每個標題生成錨點 ID,規則如下:
+
+```markdown
+轉換步驟:
+1. 保留原始標題完整文字 (包含繁中字元)
+2. 轉換為小寫
+3. 空格替換為連字號 -
+4. 移除標點符號: . , : ( ) [ ] { } ! ? " ' `
+5. 繁中與英文間的 / 前後空格轉為雙連字號 --
+6. 保留字元: 連字號 - 底線 _ 數字 字母 繁中字
+7. 多個連續連字號合併為雙連字號 --
+8. 去除前後的連字號
+
+範例對照:
+原始標題: ## 專案概述 / Project Overview
+錨點格式: #專案概述--project-overview
+
+原始標題: ## API 文件 / API Documentation  
+錨點格式: #api-文件--api-documentation
+
+原始標題: ## 快速開始 / Quick Start
+錨點格式: #快速開始--quick-start
+
+原始標題: ### 環境需求
+錨點格式: #環境需求
+
+原始標題: ##### spec-driven-workflow-v1.instructions.md
+錨點格式: #spec-driven-workflow-v1instructionsmd
+```
+
+**TOC 格式範例:**
+
+*Standard 深度 (簡單列表):*
+```markdown
+## 目錄 / Table of Contents
+
+- [功能特色 / Features](#功能特色--features)
+- [環境需求 / Prerequisites](#環境需求--prerequisites)
+- [安裝 / Installation](#安裝--installation)
+- [使用方式 / Usage](#使用方式--usage)
+- [API 文件 / API Documentation](#api-文件--api-documentation)
+- [貢獻 / Contributing](#貢獻--contributing)
+- [授權 / License](#授權--license)
+```
+
+*Comprehensive 深度 (分類式 + 快速查找):*
+```markdown
+## 目錄 / Table of Contents
+
+### 📋 核心文件
+- [專案概述 / Project Overview](#專案概述--project-overview)
+- [架構設計 / Architecture Design](#架構設計--architecture-design)
+
+### ⚙️ 使用指南
+- [安裝 / Installation](#安裝--installation)
+- [配置 / Configuration](#配置--configuration)
+
+### 🔍 快速查找
+
+| 我想要... | 前往章節 |
+|----------|----------|
+| 快速啟動專案 | [安裝](#安裝--installation) |
+| 查看 API 文件 | [API 文件](#api-文件--api-documentation) |
+```
+
+2. **Admonitions (提示框):**
 ```markdown
 > [!NOTE]
 > 這是重要資訊 / This is important information
@@ -527,26 +683,46 @@ const greeting = "Hello, World!";
 2. **執行 Phase 2**: 參考範例結構 (僅結構參考,內容繁中)
 
 3. **執行 Phase 3**: 根據深度生成對應章節內容
-   - Minimal: 5 個核心章節
-   - Standard: 10+ 標準章節 + 1-2 圖表
-   - Comprehensive: 20+ 完整章節 + 5-10 圖表
+   - Minimal: 5 個核心章節, **❌ 不生成 TOC**
+   - Standard: 10+ 標準章節 + **✅ 簡單列表式 TOC** + 1-2 圖表
+   - Comprehensive: 20+ 完整章節 + **✅ 分類式 TOC + 快速查找表** + 5-10 圖表
 
-4. **執行 Phase 4**: 套用語言策略與格式
-   - H1-H2 雙語標題
+4. **生成 TOC** (如適用):
+   - 提取所有 H3 標題文字
+   - 根據深度選擇 TOC 格式:
+     - Standard: 簡單項目列表
+     - Comprehensive: 分類式 (H3 分組) + 快速查找表格
+   - 生成符合 GFM 規範的錨點連結:
+     - 標題轉小寫
+     - 移除標點符號 (. , : ; ! ? () [] {} 等)
+     - 空格替換為連字號 `-`
+     - 雙語標題用 `--` 分隔繁中與英文
+   - 放置位置: H1 標題後、徽章後、第一個 H2 章節前
+
+5. **執行 Phase 4**: 套用語言策略與格式
+   - H1-H3 雙語標題
    - 內文繁中 + 專有名詞英文
    - 程式碼英文 + 註解雙語
    - 錯誤訊息雙語
    - Mermaid 圖表雙語節點
 
-5. **品質驗證**:
+6. **品質驗證**:
    - [ ] 所有程式碼區塊標註語言
-   - [ ] 標題階層正確 (H1 > H2 > H3)
+   - [ ] 標題階層正確 (H1 > H2 > H3 > H4)
    - [ ] 雙語標題格式一致 `{繁中} / {English}`
+   - [ ] **TOC 相關檢查:**
+     - [ ] Minimal 深度: 已確認不包含 TOC
+     - [ ] Standard 深度: 已生成簡單列表式 TOC
+     - [ ] Comprehensive 深度: 已生成分類式 TOC + 快速查找表
+     - [ ] TOC 錨點格式正確 (小寫、移除標點、空格轉 `-`)
+     - [ ] 雙語標題錨點使用 `--` 分隔 (如 `#繁中--english`)
+     - [ ] TOC 包含所有 H3 標題且無遺漏
+     - [ ] 所有 TOC 連結指向正確章節 (錨點可點擊)
    - [ ] 至少包含最少章節數 (Minimal≥5, Standard≥10, Comprehensive≥15)
    - [ ] 圖表語法正確 (Mermaid 可渲染)
    - [ ] 行長度 ≤ 120 字元 (程式碼區塊除外)
 
-6. **輸出文件**:
+7. **輸出文件**:
    - 如有權限,直接建立或更新 `README.md`
    - 如無權限,輸出完整 Markdown 原始碼
 
@@ -558,8 +734,8 @@ const greeting = "Hello, World!";
 |------|------|
 | **主要語言** | 繁體中文 (zh-TW) |
 | **次要語言** | 英文 (參考輔助) |
-| **H1-H2 標題** | 雙語: `{繁中} / {English}` |
-| **H3+ 標題** | 僅繁中 |
+| **H1-H3 標題** | 雙語: `{繁中} / {English}` |
+| **H4+ 標題** | 僅繁中 |
 | **內文** | 繁中為主,專有名詞保留英文 |
 | **程式碼變數** | 英文 (遵循慣例) |
 | **程式碼註解** | 雙語: `// 繁中 (English)` |
@@ -612,8 +788,17 @@ def calculate_complexity(project_path):
 
 - [ ] **複雜度偵測**: 已執行並記錄結果
 - [ ] **深度選擇**: 已根據複雜度選擇正確深度
+- [ ] **TOC 生成**: 
+  - [ ] Minimal 深度: 已確認不包含 TOC (章節 < 6)
+  - [ ] Standard 深度: 已生成簡單列表式 TOC
+  - [ ] Comprehensive 深度: 已生成分類式 TOC + 快速查找表
+  - [ ] TOC 錨點格式正確 `#小寫-slug` 或 `#繁中--english`
+  - [ ] TOC 雙語標題使用 `--` 分隔
+  - [ ] TOC 包含所有 H3 標題且無遺漏
+  - [ ] 所有 TOC 連結已驗證可點擊並正確跳轉
+  - [ ] TOC 位置正確 (H1 後、徽章後、第一個 H2 前)
 - [ ] **章節完整**: 包含所有必要章節
-- [ ] **雙語標題**: H1-H2 格式正確 `{繁中} / {English}`
+- [ ] **雙語標題**: H1-H3 格式正確 `{繁中} / {English}`
 - [ ] **程式碼區塊**: 所有區塊已標註語言
 - [ ] **圖表**: Mermaid 語法正確,節點雙語
 - [ ] **專有名詞**: 首次出現已加註中文
