@@ -62,51 +62,591 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
     └── ...
 ```
 
+## 快速參考索引
+
+### 📋 依功能分類
+
+#### 開發流程與專案管理
+- [Spec-driven Workflow](#spec-driven-workflow-v1instructionsmd) - 規格驅動的六階段開發循環
+- [Memory Bank](#memory-bankinstructionsmd) - 專案上下文與進度追蹤系統
+- [Copilot Thought Logging](#copilot-thought-logginginstructionsmd) - Copilot 處理過程追蹤
+
+#### 程式碼品質與規範
+- [Self-explanatory Code Commenting](#self-explanatory-code-commentinginstructionsmd) - 自我解釋的程式碼註解指南
+- [Taming Copilot](#taming-copilotinstructionsmd) - 精確控制 Copilot 行為
+- [Markdown](#markdowninstructionsmd) - Markdown 文件撰寫規範
+
+#### 安全性
+- [Security and OWASP](#security-and-owaspinstructionsmd) - OWASP Top 10 安全編碼實踐
+
+#### 效能優化
+- [Performance Optimization](#performance-optimizationinstructionsmd) - 全方位效能最佳化指南
+
+#### DevOps 與容器化
+- [DevOps Core Principles](#devops-core-principlesinstructionsmd) - DevOps 核心原則與 DORA 指標
+- [Containerization Docker Best Practices](#containerization-docker-best-practicesinstructionsmd) - Docker 容器化最佳實踐
+
+#### 文件與藍圖產生
+- [Create README](#create-readmepromptmd) - 自動產生專案 README
+- [Copilot Instructions Blueprint Generator](#copilot-instructions-blueprint-generatorpromptmd) - 產生 Copilot 指令檔案
+- [README Blueprint Generator](#readme-blueprint-generatorpromptmd) - 基於現有文件產生 README
+- [Technology Stack Blueprint Generator](#technology-stack-blueprint-generatorpromptmd) - 技術堆疊文件產生器
+
+#### 開發輔助工具
+- [Conventional Commit](#conventional-commitpromptmd) - 標準化 Git 提交訊息
+- [Create Implementation Plan](#create-implementation-planpromptmd) - 建立實作計劃
+- [Create Architectural Decision Record](#create-architectural-decision-recordpromptmd) - 建立 ADR 文件
+
+### 🔍 快速搜尋表
+
+| 我想要... | 使用這個檔案 |
+|----------|-------------|
+| 建立新專案的 README | [create-readme.prompt.md](#create-readmepromptmd) |
+| 設定 Copilot 指令 | [copilot-instructions-blueprint-generator.prompt.md](#copilot-instructions-blueprint-generatorpromptmd) |
+| 追蹤專案進度 | [memory-bank.instructions.md](#memory-bankinstructionsmd) |
+| 提升程式碼安全性 | [security-and-owasp.instructions.md](#security-and-owaspinstructionsmd) |
+| 優化應用效能 | [performance-optimization.instructions.md](#performance-optimizationinstructionsmd) |
+| 標準化 Git 提交 | [conventional-commit.prompt.md](#conventional-commitpromptmd) |
+| 建立實作計劃 | [create-implementation-plan.prompt.md](#create-implementation-planpromptmd) |
+| 審查和重構程式碼 | [review-and-refactor.prompt.md](#review-and-refactorpromptmd) |
+| 設定 Docker 容器 | [containerization-docker-best-practices.instructions.md](#containerization-docker-best-practicesinstructionsmd) |
+| 遵循 DevOps 實踐 | [devops-core-principles.instructions.md](#devops-core-principlesinstructionsmd) |
+
 ## 核心組件
 
-### 🔧 指令系統
+本專案包含完整的 GitHub Copilot 指令系統和提示範本,按功能分類如下:
 
-專案包含以下核心指令檔案：
+### 🔧 指令系統 (Instructions)
 
-| 檔案 | 描述 |
-|------|------|
-| `devops-core-principles.instructions.md` | DevOps 核心原則和 CALMS 框架 |
-| `security-and-owasp.instructions.md` | 安全編碼和 OWASP 最佳實踐 |
-| `performance-optimization.instructions.md` | 全面的效能最佳化指導 |
-| `memory-bank.instructions.md` | 專案記憶體管理和上下文維護 |
-| `spec-driven-workflow-v1.instructions.md` | 規格驅動的開發工作流程 |
-| `taming-copilot.instructions.md` | 控制 Copilot 行為的核心指令 |
+#### 開發流程與專案管理
 
-### 📝 提示範本
+##### spec-driven-workflow-v1.instructions.md
 
-提供豐富的提示範本用於：
+[查看完整檔案](.github/instructions/spec-driven-workflow-v1.instructions.md)
 
-- **專案檔案建立**：README、架構檔案記錄、實作計劃
-- **程式碼品質**：審查、重構、測試產生
-- **檔案管理**：技術堆疊藍圖、架構決策記錄
-- **開發輔助**：Conventional Commits、實作計劃更新
+- **適用範圍**: `**` (所有檔案)
+- **描述**: 規格驅動工作流程 v1 提供結構化的軟體開發方法,確保需求清晰定義、設計仔細規劃、實作徹底記錄和驗證
+- **核心功能**:
+  - 六階段執行循環 (分析 ANALYZE、設計 DESIGN、實作 IMPLEMENT、驗證 VALIDATE、反思 REFLECT、交接 HANDOFF)
+  - EARS 表示法需求定義 (事件驅動、狀態驅動、不期望行為等)
+  - 詳細的實作計畫追蹤
+  - 基於信心分數的自適應執行策略 (高/中/低信心不同處理方式)
+  - 技術債務自動管理與優先級排序
+  - 品質保證自動化 (靜態分析、動態分析、文件檢查)
+  - 結構化的 Action 文件範本和 Decision Record 範本
+- **使用場景**:
+  - 開發新功能時遵循標準化流程
+  - 管理複雜的重構任務
+  - 確保需求可測試和可追溯
+  - 進行技術債務評估
+  - 建立可維護的專案文件
+
+##### memory-bank.instructions.md
+
+[查看完整檔案](.github/instructions/memory-bank.instructions.md)
+
+- **適用範圍**: `**` (所有檔案)
+- **描述**: 專案知識、領域知識和偏好設定的記憶庫系統,用於在 AI 會話重置後保持專案上下文
+- **核心功能**:
+  - Memory Bank 檔案結構 (projectbrief.md, productContext.md, systemPatterns.md, techContext.md, activeContext.md, progress.md)
+  - 任務管理系統 (tasks/ 資料夾,包含任務索引和個別任務檔案)
+  - 三種工作流程模式 (Plan Mode, Act Mode, Task Management)
+  - 自動化文件更新機制
+  - 專案智能學習系統 (instructions)
+  - 任務命令 (add task, update task, show tasks)
+- **使用場景**:
+  - 在會話重置後快速恢復專案上下文
+  - 追蹤長期專案進度和決策歷史
+  - 管理複雜的多任務專案
+  - 保存和傳承專案知識
+  - 建立團隊共享的專案記憶
+
+##### copilot-thought-logging.instructions.md
+
+[查看完整檔案](.github/instructions/copilot-thought-logging.instructions.md)
+
+- **適用範圍**: `**` (所有檔案)
+- **描述**: 在 Copilot 處理過程中查看其遵循的流程,可編輯以重塑互動或在需要後續追蹤時儲存
+- **核心功能**:
+  - 建立 `\Copilot-Processing.md` 追蹤處理過程
+  - 四階段執行 (初始化、規劃、執行、摘要)
+  - 追蹤每個階段的完成狀態
+  - 詳細的行動項目規劃和追蹤
+  - 強制執行階段順序 (不可跳過、不可合併)
+  - 靜默工作模式 (減少狀態更新輸出)
+- **使用場景**:
+  - 需要追蹤複雜任務的執行進度
+  - 多步驟任務需要系統化管理
+  - 需要記錄 Copilot 的決策過程
+  - 調試 Copilot 行為問題
+
+#### 程式碼品質與規範
+
+##### self-explanatory-code-commenting.instructions.md
+
+[查看完整檔案](.github/instructions/self-explanatory-code-commenting.instructions.md)
+
+- **適用範圍**: `**` (所有檔案)
+- **描述**: GitHub Copilot 編寫註解的指南,以達到自我解釋的程式碼,減少不必要的註解
+- **核心功能**:
+  - 避免明顯、冗餘、過時的註解
+  - 只在必要時解釋「為什麼」(WHY),而非「什麼」(WHAT)
+  - 複雜商業邏輯、非明顯演算法、正規表示式的註解指導
+  - API 約束和陷阱的文件化
+  - 公開 API 的 JSDoc/docstring 範本
+  - 註解標註系統 (TODO, FIXME, HACK, NOTE, WARNING, PERF, SECURITY, BUG, REFACTOR, DEPRECATED)
+  - 決策框架 (四個關鍵問題)
+  - 反模式識別 (死程式碼註解、變更日誌註解、裝飾性註解)
+- **使用場景**:
+  - 程式碼審查時評估註解品質
+  - 撰寫新功能時決定是否需要註解
+  - 重構程式碼以提高可讀性
+  - 建立團隊程式碼註解標準
+  - 清理過時或無用的註解
+
+##### taming-copilot.instructions.md
+
+[查看完整檔案](.github/instructions/taming-copilot.instructions.md)
+
+- **適用範圍**: `**` (所有檔案)
+- **描述**: 防止 Copilot 在程式碼庫中造成破壞,保持其受控
+- **核心功能**:
+  - 核心指令層級 (使用者指令優先、事實驗證優於內部知識、遵循哲學)
+  - 僅在要求時提供程式碼區塊
+  - 直接簡潔的回應風格
+  - 遵循業界最佳實踐和標準模式
+  - 極簡和標準程式碼生成 (簡單優先、標準函式庫優先)
+  - 外科手術式程式碼修改 (保留現有程式碼、最小必要變更)
+  - 智慧工具使用 (宣告意圖、專注於目標)
+- **使用場景**:
+  - 需要精確控制 Copilot 行為
+  - 避免不必要的程式碼重構
+  - 確保最小化程式碼變更
+  - 維護現有程式碼結構和風格
+  - 防止過度工程化
+
+##### markdown.instructions.md
+
+[查看完整檔案](.github/instructions/markdown.instructions.md)
+
+- **適用範圍**: `**/*.md`
+- **描述**: 文件和內容建立標準
+- **核心功能**:
+  - Markdown 格式規範 (標題層級、清單格式、程式碼區塊、連結、圖片、表格)
+  - 行長度限制 (最多 400 字元)
+  - YAML front matter 要求 (description, applyTo 等)
+  - 文件結構最佳實踐
+  - 驗證需求和檢查清單
+- **使用場景**:
+  - 撰寫專案文件
+  - 建立技術部落格文章
+  - 維護 README 檔案
+  - 生成規格文件
+  - 確保文件格式一致性
+
+#### 安全性
+
+##### security-and-owasp.instructions.md
+
+[查看完整檔案](.github/instructions/security-and-owasp.instructions.md)
+
+- **適用範圍**: `*` (所有檔案)
+- **描述**: 基於 OWASP Top 10 和業界最佳實務的全面安全編碼指令,適用於所有語言和框架
+- **核心功能**:
+  - A01: 存取控制和 SSRF 防護 (最小權限原則、預設拒絕、URL 驗證、路徑遍歷防護)
+  - A02: 加密失敗防範 (強演算法、傳輸加密、靜態加密、金鑰管理)
+  - A03: 注入攻擊防護 (參數化查詢、命令列清理、XSS 防護)
+  - A05: 安全配置 (預設安全、安全標頭)
+  - A06: 元件漏洞管理 (依賴項更新、漏洞掃描)
+  - A07: 身份驗證和會話管理 (會話固定防護、安全 Cookie、暴力破解防護)
+  - A08: 資料完整性 (反序列化安全)
+- **使用場景**:
+  - 實施安全的使用者認證系統
+  - 保護 API 端點免受攻擊
+  - 防止 SQL 注入和 XSS 攻擊
+  - 管理敏感資料和金鑰
+  - 進行安全程式碼審查
+  - 建立安全編碼標準
+
+#### 效能優化
+
+##### performance-optimization.instructions.md
+
+[查看完整檔案](.github/instructions/performance-optimization.instructions.md)
+
+- **適用範圍**: `*` (所有檔案)
+- **描述**: 針對所有語言、框架和堆疊的最全面、實用的效能優化指令,涵蓋前端、後端和資料庫最佳實務
+- **核心功能**:
+  - 一般原則 (先測量後優化、優化常見情況、避免過早優化)
+  - 前端效能 (DOM 操作、渲染優化、資源優化、網路優化、JavaScript 效能)
+  - 後端效能 (演算法和資料結構、平行處理、快取策略、API 優化)
+  - 資料庫效能 (查詢優化、索引策略、架構設計、交易管理)
+  - 框架特定技巧 (React, Angular, Vue, Node.js, Python, Java, .NET)
+  - 程式碼審查檢查清單
+  - 進階主題 (效能分析、記憶體管理、擴展性、行動裝置效能)
+  - 實際範例和反模式
+- **使用場景**:
+  - 優化網頁載入速度
+  - 減少 API 回應時間
+  - 改善資料庫查詢效能
+  - 進行效能瓶頸分析
+  - 記憶體洩漏偵測和修復
+  - 建立效能測試基準
+
+#### DevOps 與容器化
+
+##### devops-core-principles.instructions.md
+
+[查看完整檔案](.github/instructions/devops-core-principles.instructions.md)
+
+- **適用範圍**: `*` (所有檔案)
+- **描述**: 涵蓋核心 DevOps 原則、文化 (CALMS) 和關鍵指標 (DORA) 的基礎指令,指導 GitHub Copilot 理解和推廣有效的軟體交付
+- **核心功能**:
+  - CALMS 框架詳解:
+    - Culture (文化): 協作、無責備、共同責任、持續學習
+    - Automation (自動化): CI/CD、IaC、配置管理、自動化測試
+    - Lean (精實): 消除浪費、最大化流程、價值流映射
+    - Measurement (測量): KPI、監控、儀表板、實驗
+    - Sharing (分享): 知識共享、工具平台、跨功能團隊
+  - DORA 四大指標:
+    - Deployment Frequency (部署頻率) - 目標: 每日多次
+    - Lead Time for Changes (變更前置時間) - 目標: < 1 小時
+    - Change Failure Rate (變更失敗率) - 目標: 0-15%
+    - Mean Time to Recovery (平均恢復時間) - 目標: < 1 小時
+  - DevOps 定義和文化轉型指導
+- **使用場景**:
+  - 設計 CI/CD 流程
+  - 評估團隊軟體交付效能
+  - 建立自動化部署流程
+  - 實施監控和測量機制
+  - 推動 DevOps 文化轉型
+  - 改善團隊協作和溝通
+
+##### containerization-docker-best-practices.instructions.md
+
+[查看完整檔案](.github/instructions/containerization-docker-best-practices.instructions.md)
+
+- **適用範圍**: `**/Dockerfile`, `**/Dockerfile.*`, `**/*.dockerfile`, `**/docker-compose*.yml`, `**/docker-compose*.yaml`
+- **描述**: Docker 容器化與映像優化的完整最佳實務指南,涵蓋多階段建構、映像層優化、安全掃描和執行時最佳實務
+- **核心功能**:
+  - 多階段建構實作 (減少映像大小、分離建構和執行環境)
+  - 基礎映像選擇與優化 (Alpine vs Distroless, 版本固定)
+  - 映像層優化 (層快取、指令排序、.dockerignore)
+  - 安全性最佳實踐 (非 root 使用者、掃描工具、金鑰管理)
+  - 資源管理 (CPU/記憶體限制、健康檢查)
+  - 網路配置 (網路模式、服務發現)
+  - Docker Compose 編排
+  - 容器監控和日誌
+- **使用場景**:
+  - 建立 Dockerfile 時確保遵循最佳實務
+  - 優化現有容器映像大小和安全性
+  - 設計微服務容器架構
+  - 實施 CI/CD 容器化流程
+  - 進行容器安全審計
+  - 設定生產環境容器編排
+
+### 📝 提示範本 (Prompts)
+
+#### 文件與藍圖產生
+
+##### create-readme.prompt.md
+
+[查看完整檔案](.github/prompts/create-readme.prompt.md)
+
+- **用途**: 為專案建立高品質的 README.md 檔案
+- **功能**:
+  - 審查整個專案和工作區
+  - 參考優秀 README 範例的結構和語調
+  - 使用 GFM (GitHub Flavored Markdown) 格式
+  - 包含專案概述、安裝、使用、貢獻等標準章節
+  - 自動偵測技術堆疊和相依性
+- **使用時機**: 需要為新專案或現有專案建立或更新 README 時
+
+##### copilot-instructions-blueprint-generator.prompt.md
+
+[查看完整檔案](.github/prompts/copilot-instructions-blueprint-generator.prompt.md)
+
+- **用途**: 建立全面的 copilot-instructions.md 檔案,指導 GitHub Copilot 產生符合專案標準的程式碼
+- **功能**:
+  - 技術版本精確偵測 (語言、框架、函式庫版本)
+  - 程式碼庫模式分析 (命名慣例、架構模式、錯誤處理)
+  - 架構一致性維護
+  - 特定技術指南生成
+  - 自動化文件結構
+- **使用時機**: 需要為新專案或現有專案建立 Copilot 指令檔案時
+
+##### readme-blueprint-generator.prompt.md
+
+[查看完整檔案](.github/prompts/readme-blueprint-generator.prompt.md)
+
+- **用途**: 透過分析專案文件結構建立全面的 README.md
+- **功能**:
+  - 掃描 `.github/copilot` 目錄檔案
+  - 提取專案資訊、技術堆疊、架構
+  - 生成結構良好的 Markdown 文件
+  - 自動化索引和連結生成
+- **使用時機**: 需要基於現有文件自動生成 README 時
+
+##### technology-stack-blueprint-generator.prompt.md
+
+[查看完整檔案](.github/prompts/technology-stack-blueprint-generator.prompt.md)
+
+- **用途**: 分析程式碼庫以建立詳細的架構文件,自動偵測技術堆疊
+- **功能**:
+  - 技術識別 (語言、框架、函式庫版本)
+  - 實作模式和慣例文件化
+  - 使用範例提取
+  - 技術關係圖生成
+  - 相依性分析
+- **使用時機**: 需要為專案建立全面的技術堆疊文件時
+
+##### create-agents.md.prompt.md
+
+[查看完整檔案](.github/prompts/create-agentsmd.prompt.md)
+
+- **用途**: 為儲存庫建立高品質的 AGENTS.md 檔案
+- **功能**:
+  - 遵循 agents.md 公開格式
+  - 提供專案概述、設定命令、開發工作流程
+  - 包含測試指令、程式碼風格指南、建構和部署資訊
+  - AI 代理優化的結構化內容
+- **使用時機**: 需要為 AI 編碼代理提供專案上下文和指令時
+
+##### create-architectural-decision-record.prompt.md
+
+[查看完整檔案](.github/prompts/create-architectural-decision-record.prompt.md)
+
+- **用途**: 建立針對 AI 優化的架構決策記錄 (ADR) 文件
+- **功能**:
+  - 使用標準化 ADR 格式
+  - 記錄決策、替代方案、後果
+  - 包含實作註記和參考資料
+  - 版本控制和追蹤
+- **使用時機**: 需要記錄重要的架構決策時
+
+##### documentation-writer.prompt.md
+
+[查看完整檔案](.github/prompts/documentation-writer.prompt.md)
+
+- **用途**: Diátaxis 文件專家,建立高品質的軟體文件
+- **功能**:
+  - 遵循 Diátaxis 框架 (教學 Tutorials、操作指南 How-to Guides、參考 Reference、說明 Explanation)
+  - 提供結構化工作流程
+  - 確保清晰度、準確性、使用者為中心、一致性
+  - 多種文件類型支援
+- **使用時機**: 需要建立結構化、高品質的技術文件時
+
+#### 開發輔助工具
+
+##### conventional-commit.prompt.md
+
+[查看完整檔案](.github/prompts/conventional-commit.prompt.md)
+
+- **用途**: 使用結構化 XML 格式生成符合 Conventional Commits 規範的提交訊息
+- **功能**:
+  - 提供提交訊息結構範本 (type, scope, subject, body, footer)
+  - 自動執行 `git commit` 命令
+  - 驗證提交訊息格式
+  - 支援多種提交類型 (feat, fix, docs, style, refactor, test, chore)
+- **使用時機**: 需要建立標準化的 Git 提交訊息時
+
+##### create-implementation-plan.prompt.md
+
+[查看完整檔案](.github/prompts/create-implementation-plan.prompt.md)
+
+- **用途**: 為新功能、重構、套件升級或架構變更建立新的實作計畫檔案
+- **功能**:
+  - 機器可讀、確定性的結構化計畫
+  - 離散的原子階段和可執行任務
+  - 包含需求、約束、依賴項、測試策略、風險評估
+  - 驗證標準和成功指標
+- **使用時機**: 開始新功能開發或重大重構任務時
+
+##### update-implementation-plan.prompt.md
+
+[查看完整檔案](.github/prompts/update-implementation-plan.prompt.md)
+
+- **用途**: 基於新需求或更新需求更新現有的實作計畫檔案
+- **功能**:
+  - 更新現有計畫結構
+  - 維護任務追蹤和狀態
+  - 更新日期和完成度
+  - 保持計畫一致性
+- **使用時機**: 實作計畫需要根據新需求進行更新時
+
+##### update-specification.prompt.md
+
+[查看完整檔案](.github/prompts/update-specification.prompt.md)
+
+- **用途**: 基於新需求或現有程式碼更新,更新現有的規格檔案,針對生成式 AI 消費優化
+- **功能**:
+  - 更新需求、約束和介面
+  - 維護 AI 就緒規格格式
+  - 包含驗證標準和測試策略
+  - 確保規格可追溯性
+- **使用時機**: 規格需要反映最新的需求變更或實作更新時
+
+##### prompt-builder.prompt.md
+
+[查看完整檔案](.github/prompts/prompt-builder.prompt.md)
+
+- **用途**: 引導使用者建立高品質的 GitHub Copilot 提示,具備適當的結構、工具和最佳實務
+- **功能**:
+  - 系統性收集需求
+  - 生成完整、生產就緒的提示檔案
+  - 整合最佳實務和 YAML front matter
+  - 提供範本和範例
+- **使用時機**: 需要建立新的 .prompt.md 檔案時
+
+#### 程式碼品質與維護
+
+##### review-and-refactor.prompt.md
+
+[查看完整檔案](.github/prompts/review-and-refactor.prompt.md)
+
+- **用途**: 根據定義的指令審查和重構專案中的程式碼
+- **功能**:
+  - 審查所有編碼指南指令
+  - 進行必要的程式碼重構
+  - 確保測試仍然通過
+  - 提供重構報告和建議
+- **使用時機**: 需要對整個專案進行程式碼品質審查和重構時
+
+##### update-markdown-file-index.prompt.md
+
+[查看完整檔案](.github/prompts/update-markdown-file-index.prompt.md)
+
+- **用途**: 使用指定資料夾中的檔案索引/表格更新 Markdown 檔案區段
+- **功能**:
+  - 掃描和發現檔案
+  - 生成適當的表格/清單格式
+  - 提取檔案描述 (從 YAML front matter)
+  - 自動更新索引章節
+- **使用時機**: 需要在文件中維護檔案清單或索引時
+
+##### update-oo-component-documentation.prompt.md
+
+[查看完整檔案](.github/prompts/update-oo-component-documentation.prompt.md)
+
+- **用途**: 遵循業界最佳實務和架構文件標準更新現有的物件導向元件文件
+- **功能**:
+  - 分析當前元件實作
+  - 更新 C4 模型文件
+  - 更新 UML 圖表和架構資訊
+  - 同步程式碼和文件
+- **使用時機**: 元件程式碼變更後需要同步更新文件時
+
+#### 專案發現與建議
+
+##### suggest-awesome-github-copilot-instructions.prompt.md
+
+[查看完整檔案](.github/prompts/suggest-awesome-github-copilot-instructions.prompt.md)
+
+- **用途**: 基於當前儲存庫上下文和聊天歷史,從 awesome-copilot 儲存庫建議相關的 Copilot 指令檔案
+- **功能**:
+  - 獲取可用指令清單
+  - 掃描本地指令
+  - 比較現有指令以避免重複
+  - 提供結構化的建議表格 (類別、檔案名稱、描述、相關性評分)
+- **使用時機**: 需要發現和安裝適合專案的 Copilot 指令時
+
+##### suggest-awesome-github-copilot-prompts.prompt.md
+
+[查看完整檔案](.github/prompts/suggest-awesome-github-copilot-prompts.prompt.md)
+
+- **用途**: 基於當前儲存庫上下文和聊天歷史,從 awesome-copilot 儲存庫建議相關的提示檔案
+- **功能**:
+  - 獲取可用提示清單
+  - 掃描本地提示
+  - 比較現有提示以避免重複
+  - 提供結構化的建議表格
+- **使用時機**: 需要發現和安裝適合專案的 Copilot 提示時
 
 ## 使用範例
 
-### 建立專案 README
+### 情境 1: 開始新專案
 
-使用內建的提示範本：
+**步驟 1**: 建立專案 README
 
 ```markdown
 Follow instructions in [create-readme.prompt.md](file:///.github/prompts/create-readme.prompt.md)
 ```
 
-### 產生架構檔案
+**步驟 2**: 產生 Copilot 指令檔案
 
 ```markdown
 Follow instructions in [copilot-instructions-blueprint-generator.prompt.md](file:///.github/prompts/copilot-instructions-blueprint-generator.prompt.md)
 ```
 
-### 建立實作計劃
+**步驟 3**: 建立技術堆疊文件
+
+```markdown
+Follow instructions in [technology-stack-blueprint-generator.prompt.md](file:///.github/prompts/technology-stack-blueprint-generator.prompt.md)
+```
+
+### 情境 2: 開發新功能
+
+**步驟 1**: 建立實作計劃
 
 ```markdown
 Follow instructions in [create-implementation-plan.prompt.md](file:///.github/prompts/create-implementation-plan.prompt.md)
 ```
+
+**步驟 2**: 在 Memory Bank 中追蹤進度
+
+使用 `add task` 命令建立新任務,或 `update task [ID]` 更新現有任務狀態。
+
+**步驟 3**: 遵循 Spec-driven Workflow
+
+按照六階段循環進行開發:
+1. 分析 (ANALYZE)
+2. 設計 (DESIGN)
+3. 實作 (IMPLEMENT)
+4. 驗證 (VALIDATE)
+5. 反思 (REFLECT)
+6. 交接 (HANDOFF)
+
+### 情境 3: 提升程式碼品質
+
+**步驟 1**: 進行程式碼審查和重構
+
+```markdown
+Follow instructions in [review-and-refactor.prompt.md](file:///.github/prompts/review-and-refactor.prompt.md)
+```
+
+**步驟 2**: 檢查安全性問題
+
+確保 `security-and-owasp.instructions.md` 指令已啟用,Copilot 會自動檢查常見的安全漏洞。
+
+**步驟 3**: 優化效能
+
+參考 `performance-optimization.instructions.md` 中的最佳實踐進行效能調整。
+
+### 情境 4: 容器化部署
+
+**步驟 1**: 建立 Dockerfile
+
+在編輯 Dockerfile 時,`containerization-docker-best-practices.instructions.md` 會自動提供建議。
+
+**步驟 2**: 設定 CI/CD
+
+參考 `devops-core-principles.instructions.md` 建立自動化部署流程。
+
+**步驟 3**: 記錄架構決策
+
+```markdown
+Follow instructions in [create-architectural-decision-record.prompt.md](file:///.github/prompts/create-architectural-decision-record.prompt.md)
+```
+
+### 情境 5: 標準化 Git 工作流程
+
+**提交程式碼時**:
+
+```markdown
+Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/conventional-commit.prompt.md)
+```
+
+這會產生符合 Conventional Commits 規範的提交訊息並自動執行提交。
 
 ## 最佳實踐
 
