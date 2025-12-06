@@ -25,6 +25,35 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 - **🛡️ 安全優先**：整合 OWASP 指南和安全編碼實踐
 - **⚡ 效能最佳化**：內建效能最佳化指導原則
 
+## Agents 代理清單
+
+本專案內建多種 AI 代理 (agents)，每個 agent 皆有明確分工，支援架構設計、測試、產品規格、工程指導與基礎設施自動化。
+
+| Agent 名稱 | 檔案 | 主要職責 | 核心特色 |
+|------------|-------------------------------|--------------------------------------------------|--------------------------------------------------|
+| **Senior Cloud Architect** | [arch.agent.md](.github/agents/arch.agent.md) | 現代架構設計模式專家，NFR 需求分析，建立全面的架構圖表和文件 | • 不產生程式碼，專注架構設計<br>• 必須產生 6 種 Mermaid 圖表（系統上下文、元件、部署、資料流、時序、其他相關圖）<br>• 分階段開發方法（Initial Phase → Final Phase）<br>• NFR 詳細分析（可擴展性、效能、安全性、可靠性、可維護性）<br>• 輸出格式：`{app}_Architecture.md` |
+| **Context7 Documentation Expert** | [context7.agent.md](.github/agents/context7.agent.md) | 函式庫/框架最新文件查詢專家，版本升級建議與 API 精確性保證 | • **強制使用 Context7 MCP** 查詢最新官方文件<br>• 禁止憑記憶或訓練資料回答<br>• 自動版本比對（當前 vs 最新）<br>• 多語言生態系統支援（JS/TS, Python, Ruby, Go, Rust, PHP, Java, .NET）<br>• 升級指南自動產生（Breaking Changes、Migration Steps）<br>• 工作流程：`resolve-library-id` → `get-library-docs` → 版本檢查 → 回答 |
+| **Critical Thinking Mode** | [critical-thinking.agent.md](.github/agents/critical-thinking.agent.md) | 挑戰假設，促進批判性思考，確保最佳解決方案和結果 | • 不提供解決方案或直接答案<br>• 持續追問「為什麼」（Why）<br>• 扮演魔鬼代言人角色<br>• 戰略性長期影響思考<br>• 細節導向但簡潔問題<br>• 一次專注一個問題 |
+| **Playwright Tester Mode** | [playwright-tester.agent.md](.github/agents/playwright-tester.agent.md) | Playwright 測試專家，網站探索、測試產生與執行、測試改進 | • **使用 Playwright MCP** 導航網站<br>• 先探索網站再產生測試（不提前編碼）<br>• TypeScript 測試產生<br>• 測試執行、診斷失敗、迭代修正<br>• 結構化可維護測試<br>• 功能摘要文件化 |
+| **Create PRD Chat Mode** | [prd.agent.md](.github/agents/prd.agent.md) | 產品需求文件（PRD）產生專家，用戶故事、驗收標準、技術考量 | • 產生完整 `prd.md` 文件<br>• 先提問釐清需求（3-5 個問題）<br>• 分析程式碼庫以了解現有架構<br>• 唯一需求 ID（GH-001）<br>• 可測試的用戶故事與驗收標準<br>• 支援自動建立 GitHub Issues |
+| **Principal Software Engineer** | [principal-software-engineer.agent.md](.github/agents/principal-software-engineer.agent.md) | 首席工程師級指導，工程卓越、技術領導、務實實作（Martin Fowler 風格） | • 工程基礎原則（Gang of Four, SOLID, DRY, YAGNI, KISS）<br>• 清晰程式碼實踐<br>• 測試金字塔策略（單元、整合、端對端）<br>• **技術債務自動管理**（使用 `create_issue` 追蹤）<br>• 需求分析與風險評估<br>• 平衡工程卓越與交付需求 |
+| **Terraform Agent** | [terraform.agent.md](.github/agents/terraform.agent.md) | Terraform IaC 專家，自動化 HCP Terraform 工作流程，基礎設施最佳實踐 | • **使用 Terraform MCP Server** 自動化<br>• Registry 智慧查詢（Public + Private）<br>• 自動解析最新 Provider/Module 版本<br>• HCP Terraform Workspace 管理<br>• Run 編排（Plan → Apply）<br>• **2-space 縮排，對齊 `=`**<br>• 必須包含檔案：`main.tf`, `variables.tf`, `outputs.tf`, `README.md`<br>• Backend 配置自動產生 |
+
+### Agent 使用方式
+
+每個 agent 皆有獨立的指令集與工作流程，詳情請參閱 [`.github/agents/`](.github/agents/) 目錄下的對應檔案。
+
+**在 GitHub Copilot Chat 中啟用 Agent：**
+```
+@<agent-name> <your-question>
+```
+
+**範例：**
+- `@arch` - 啟用 Senior Cloud Architect
+- `@context7` - 啟用 Context7 Documentation Expert
+- `@playwright` - 啟用 Playwright Tester Mode
+- `@terraform` - 啟用 Terraform Agent
+
 ## 目錄 / Table of Contents
 
 - [概述](#概述)
@@ -130,7 +159,8 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 │   ├── performance-optimization.instructions.md
 │   └── ...
 └── prompts/              # 提示範本
-    ├── create-readme.prompt.md
+    ├── create-readme-comprehensive.prompt.md
+    ├── create-readme-quick.prompt.md
     ├── copilot-instructions-blueprint-generator.prompt.md
     └── ...
 ```
@@ -160,7 +190,8 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 - [Containerization Docker Best Practices](#containerization-docker-best-practicesinstructionsmd) - Docker 容器化最佳實踐
 
 #### 文件與藍圖產生
-- [Create README](#create-readmepromptmd) - 自動產生專案 README
+- [Create README (Comprehensive)](#create-readme-comprehensivepromptmd-推薦) - 智慧型雙語 README 產生器
+- [Create README (Quick)](#create-readme-quickpromptmd) - 快速英文 README 產生器
 - [Copilot Instructions Blueprint Generator](#copilot-instructions-blueprint-generatorpromptmd) - 產生 Copilot 指令檔案
 - [README Blueprint Generator](#readme-blueprint-generatorpromptmd) - 基於現有文件產生 README
 - [Technology Stack Blueprint Generator](#technology-stack-blueprint-generatorpromptmd) - 技術堆疊文件產生器
@@ -901,6 +932,12 @@ Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/c
 
 本專案採用 MIT 授權。詳見 [LICENSE](LICENSE) 檔案。
 
+## 參考來源
+
+本專案靈感來自並參考了以下優秀的開源專案：
+
+- [github/awesome-copilot](https://github.com/github/awesome-copilot) - GitHub 官方的 Copilot 資源集合
+
 ---
 
-⭐ 如果這個專案對您有幫助，請給我們一個星星！
+⭐ 如果這個專案對您有幫助,請給我們一個星星!
