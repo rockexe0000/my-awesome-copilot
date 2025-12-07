@@ -11,17 +11,43 @@
 
 ## 目錄 / Table of Contents
 
+### 📋 核心文件
 - [專案概述 / Project Overview](#專案概述--project-overview)
 - [核心特色 / Key Features](#核心特色--key-features)
+- [系統架構 / System Architecture](#系統架構--system-architecture)
+
+### 🚀 快速開始
 - [快速開始 / Quick Start](#快速開始--quick-start)
 - [專案結構 / Project Structure](#專案結構--project-structure)
 - [AI 代理清單 / AI Agents](#ai-代理清單--ai-agents)
+
+### 📚 詳細指南
 - [指令系統 / Instructions System](#指令系統--instructions-system)
 - [提示範本 / Prompt Templates](#提示範本--prompt-templates)
 - [使用範例 / Usage Examples](#使用範例--usage-examples)
+
+### 🔧 最佳實踐與規範
 - [最佳實踐 / Best Practices](#最佳實踐--best-practices)
+- [文件管理建議 / Documentation Management](#文件管理建議--documentation-management)
+
+### 🤝 社群與支援
 - [貢獻 / Contributing](#貢獻--contributing)
+- [支援 / Support](#支援--support)
 - [授權 / License](#授權--license)
+
+### 🔍 快速查找
+
+| 我想要... | 前往章節 |
+|----------|----------|
+| 了解專案背景與目標 | [專案概述](#專案概述--project-overview) |
+| 查看系統架構圖 | [系統架構](#系統架構--system-architecture) |
+| 快速啟動專案 | [快速開始](#快速開始--quick-start) |
+| 查看所有 AI 代理 | [AI 代理清單](#ai-代理清單--ai-agents) |
+| 了解指令系統 | [指令系統](#指令系統--instructions-system) |
+| 瀏覽提示範本 | [提示範本](#提示範本--prompt-templates) |
+| 學習使用範例 | [使用範例](#使用範例--usage-examples) |
+| 檔案命名規範 | [最佳實踐](#最佳實踐--best-practices) |
+| 回報問題或貢獻 | [貢獻](#貢獻--contributing) |
 
 ## 專案概述 / Project Overview
 
@@ -72,6 +98,103 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，專
 - 任務狀態自動追蹤
 - 決策歷史記錄
 - 多會話上下文保持
+
+## 系統架構 / System Architecture
+
+### 專案組織結構圖
+
+```mermaid
+graph TB
+    subgraph "My Awesome Copilot 專案架構"
+        Root[📦 專案根目錄<br/>my-awesome-copilot]
+        
+        subgraph GitHub[".github/ 配置目錄"]
+            Instructions[📋 Instructions<br/>指令系統<br/>10 個檔案]
+            Prompts[📝 Prompts<br/>提示範本<br/>19 個檔案]
+            Agents[🤖 Agents<br/>AI 代理<br/>7 個檔案]
+        end
+        
+        subgraph Core["核心文件"]
+            README[📖 README.md<br/>專案說明]
+            CONTRIB[🤝 CONTRIBUTING.md<br/>貢獻指南]
+            LICENSE[⚖️ LICENSE<br/>MIT 授權]
+        end
+        
+        Root --> GitHub
+        Root --> Core
+        
+        Instructions --> DevOps[DevOps 原則]
+        Instructions --> Security[安全編碼 OWASP]
+        Instructions --> Performance[效能優化]
+        Instructions --> Workflow[Spec-driven Workflow]
+        Instructions --> Memory[Memory Bank]
+        Instructions --> Docker[Docker 最佳實踐]
+        Instructions --> Others[其他指令...]
+        
+        Prompts --> ReadmeGen[README 產生器]
+        Prompts --> PlanGen[實作計劃產生器]
+        Prompts --> ADRGen[ADR 產生器]
+        Prompts --> Commit[Git 提交規範]
+        Prompts --> Others2[其他提示...]
+        
+        Agents --> Arch[架構設計專家]
+        Agents --> Context7[文件查詢專家]
+        Agents --> Playwright[測試自動化]
+        Agents --> PRD[PRD 產生器]
+        Agents --> Terraform[Terraform 專家]
+        Agents --> Others3[其他代理...]
+    end
+    
+    style Root fill:#e1f5ff
+    style Instructions fill:#fff3e0
+    style Prompts fill:#e8f5e9
+    style Agents fill:#f3e5f5
+    style Core fill:#fce4ec
+```
+
+### 工作流程圖
+
+```mermaid
+flowchart LR
+    User[👤 使用者]
+    
+    subgraph GitHubCopilot["GitHub Copilot 整合"]
+        Instructions2[📋 自動載入<br/>Instructions]
+        Prompts2[📝 手動呼叫<br/>Prompts]
+        Agents2[🤖 @ 標記<br/>Agents]
+    end
+    
+    subgraph Output["輸出成果"]
+        Code[💻 程式碼]
+        Docs[📄 文件]
+        Plan[📊 計劃]
+        ADR[📝 決策記錄]
+    end
+    
+    User -->|編寫程式碼| Instructions2
+    User -->|產生文件| Prompts2
+    User -->|專業諮詢| Agents2
+    
+    Instructions2 -->|自動套用規範| Code
+    Prompts2 -->|產生| Docs
+    Prompts2 -->|產生| Plan
+    Prompts2 -->|產生| ADR
+    Agents2 -->|提供建議| Code
+    Agents2 -->|產生| Docs
+    
+    style User fill:#bbdefb
+    style Instructions2 fill:#fff3e0
+    style Prompts2 fill:#e8f5e9
+    style Agents2 fill:#f3e5f5
+```
+
+### 三大核心系統
+
+| 系統 | 類型 | 觸發方式 | 數量 | 主要用途 |
+|------|------|---------|------|---------|
+| **Instructions** | 自動 | 根據檔案類型自動載入 | 10 個 | 程式碼生成規範、最佳實踐自動套用 |
+| **Prompts** | 手動 | 使用 `Follow instructions in [file.prompt.md]` | 19 個 | 文件產生、計劃建立、程式碼審查 |
+| **Agents** | 互動 | 使用 `@agent-name` 標記 | 7 個 | 專業領域諮詢、架構設計、測試自動化 |
 
 ## 快速開始 / Quick Start
 
@@ -1218,7 +1341,45 @@ project-root/
 4. 推送到分支
 5. 開啟 Pull Request
 
-## 支援
+## 文件管理建議 / Documentation Management
+
+### 📏 當前文件狀態
+
+> [!NOTE]
+> **文件大小評估**
+> - 目前 README.md 大小: 約 **7,200+ 字**
+> - 建議範圍 (Standard 深度): 1,500-3,000 字
+> - 狀態: 🟡 **超過建議上限** (適用於工具/資源型專案)
+
+### 為什麼保留完整內容？
+
+本專案是 **GitHub Copilot 指令與提示範本集合**，屬於工具/資源型專案。詳細的指令說明、使用範例和最佳實踐是核心價值，因此保留完整內容比拆分更適合：
+
+✅ **優點**:
+- 使用者可在單一頁面查看所有資訊
+- 便於搜尋和快速參考
+- 降低導航複雜度
+- 完整展示專案價值
+
+⚠️ **注意事項**:
+- 載入時間可能稍長
+- 需要良好的 TOC 導航結構 (已實施分類式 TOC)
+- 定期評估是否需要拆分
+
+### 未來拆分建議
+
+如果未來 README.md 超過 **10,000 字** 或包含超過 **40 個章節**，建議拆分為:
+
+```
+docs/
+├── instructions-guide.md    # 詳細指令系統說明
+├── prompts-guide.md         # 詳細提示範本說明  
+├── agents-guide.md          # 詳細 AI 代理說明
+├── getting-started.md       # 新手入門指南
+└── advanced-usage.md        # 進階使用技巧
+```
+
+## 支援 / Support
 
 如果您遇到問題或有建議，請：
 
@@ -1226,7 +1387,7 @@ project-root/
 2. [建立新的 Issue](https://github.com/rockexe0000/my-awesome-copilot/issues/new)
 3. 提供詳細的問題描述和重現步驟
 
-## 授權
+## 授權 / License
 
 本專案採用 MIT 授權。詳見 [LICENSE](LICENSE) 檔案。
 
