@@ -2,28 +2,78 @@
 
 一個精心設計的 GitHub Copilot 指令和提示集合，旨在提升開發者體驗並促進最佳實踐的採用。
 
+> A curated collection of GitHub Copilot instructions and prompts designed to enhance developer experience and promote best practices.
+
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/rockexe0000/my-awesome-copilot?style=flat-square)](https://github.com/rockexe0000/my-awesome-copilot/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/rockexe0000/my-awesome-copilot?style=flat-square)](https://github.com/rockexe0000/my-awesome-copilot/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
-## 概述
+## 目錄 / Table of Contents
 
-My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設計用於：
+- [專案概述 / Project Overview](#專案概述--project-overview)
+- [核心特色 / Key Features](#核心特色--key-features)
+- [快速開始 / Quick Start](#快速開始--quick-start)
+- [專案結構 / Project Structure](#專案結構--project-structure)
+- [AI 代理清單 / AI Agents](#ai-代理清單--ai-agents)
+- [指令系統 / Instructions System](#指令系統--instructions-system)
+- [提示範本 / Prompt Templates](#提示範本--prompt-templates)
+- [使用範例 / Usage Examples](#使用範例--usage-examples)
+- [最佳實踐 / Best Practices](#最佳實踐--best-practices)
+- [貢獻 / Contributing](#貢獻--contributing)
+- [授權 / License](#授權--license)
 
-- **標準化開發實踐**：通過一致的指令確保程式碼品質和架構決策
-- **提升開發效率**：提供現成的提示範本來處理常見的開發任務
-- **促進最佳實踐**：整合 DevOps、安全性、效能最佳化等業界標準
-- **增強程式碼品質**：透過自動化檢查和建議來維持高程式碼標準
+## 專案概述 / Project Overview
 
-## 特色功能
+My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，專為提升軟體開發效率與程式碼品質而設計。本專案整合了業界最佳實踐、安全規範和效能優化策略，透過結構化的指令系統和可重用的提示範本,幫助開發團隊建立一致的開發標準。
 
-- **🔧 全面的指令系統**：涵蓋 DevOps、安全性、效能、檔案規範等各個面向
-- **📝 豐富的提示範本**：預建的提示檔案用於常見開發工作流程
-- **🏗️ 架構藍圖產生器**：自動化專案架構和技術堆疊檔案建立
-- **🔄 記憶體銀行系統**：維持專案上下文和進度追蹤
-- **📋 規格驅動工作流程**：結構化的開發方法，從需求到實作
-- **🛡️ 安全優先**：整合 OWASP 指南和安全編碼實踐
-- **⚡ 效能最佳化**：內建效能最佳化指導原則
+> My Awesome Copilot is a comprehensive GitHub Copilot instructions and prompts system designed to enhance software development efficiency and code quality. This project integrates industry best practices, security standards, and performance optimization strategies through structured instruction systems and reusable prompt templates, helping development teams establish consistent development standards.
+
+### 核心目標 / Core Goals
+
+- **標準化開發實踐** - 通過一致的指令確保程式碼品質和架構決策
+- **提升開發效率** - 提供現成的提示範本來處理常見的開發任務
+- **促進最佳實踐** - 整合 DevOps、安全性、效能最佳化等業界標準
+- **增強程式碼品質** - 透過自動化檢查和建議來維持高程式碼標準
+
+## 核心特色 / Key Features
+
+### 🎯 全面的指令系統
+
+涵蓋軟體開發全生命週期的指令集:
+- **DevOps 核心原則** - CALMS 框架與 DORA 四大指標
+- **安全編碼規範** - 基於 OWASP Top 10 的安全指導
+- **效能最佳化** - 前端、後端、資料庫全方位優化策略
+- **開發流程管理** - Spec-driven Workflow 六階段開發循環
+- **容器化最佳實踐** - Docker 映像優化與安全掃描
+
+### 📝 豐富的提示範本
+
+預建的提示檔案用於常見開發工作流程:
+- **README 產生器** - 智慧型雙語文件產生 (繁中/英文)
+- **實作計劃管理** - 結構化的開發計畫建立與追蹤
+- **架構決策記錄** - ADR 文件自動化產生
+- **程式碼審查工具** - 自動化程式碼品質檢查與重構建議
+- **標準化 Git 提交** - Conventional Commits 規範整合
+
+### 🤖 智慧 AI 代理
+
+內建 7 個專業 AI 代理,涵蓋架構、測試、文件等領域:
+- **架構設計專家** - 產生完整的架構圖表與 NFR 分析
+- **文件查詢專家** - 即時查詢最新函式庫文件
+- **測試自動化** - Playwright 測試腳本產生與執行
+- **PRD 產生器** - 產品需求文件自動化建立
+- **Terraform 專家** - IaC 最佳實踐與自動化部署
+
+### 🔄 記憶體銀行系統
+
+維持專案上下文和進度追蹤:
+- 專案知識持久化儲存
+- 任務狀態自動追蹤
+- 決策歷史記錄
+- 多會話上下文保持
+
+## 快速開始 / Quick Start
 
 ## Agents 代理清單
 
@@ -127,43 +177,140 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
 - [支援](#支援)
 - [授權](#授權)
 
-## 快速開始
+## 快速開始 / Quick Start
 
-### 使用方式
+### 安裝 / Installation
 
-1. **複製專案結構**：
-   ```bash
-   git clone https://github.com/rockexe0000/my-awesome-copilot.git
-   cd my-awesome-copilot
-   ```
+```bash
+# 複製專案儲存庫 (Clone repository)
+git clone https://github.com/rockexe0000/my-awesome-copilot.git
+cd my-awesome-copilot
+```
 
-2. **將指令檔案複製到您的專案**：
-   ```bash
-   cp -r .github/instructions /path/to/your/project/.github/
-   ```
+### 整合到現有專案 / Integration
 
-3. **根據需求自訂提示**：
-   ```bash
-   cp -r .github/prompts /path/to/your/project/.github/
-   ```
+#### 方法 1: 複製指令檔案 (Copy Instructions)
 
-### 整合到現有專案
+```bash
+# 複製指令檔案到您的專案 (Copy instructions to your project)
+cp -r .github/instructions /path/to/your/project/.github/
 
-在您的專案根目錄中建立 `.github` 資料夾結構：
+# 複製提示範本 (Copy prompt templates)
+cp -r .github/prompts /path/to/your/project/.github/
+
+# 複製 AI 代理 (Optional: Copy AI agents)
+cp -r .github/agents /path/to/your/project/.github/
+```
+
+#### 方法 2: Git Submodule (Recommended)
+
+```bash
+# 在您的專案中加入為 submodule (Add as submodule)
+cd /path/to/your/project
+git submodule add https://github.com/rockexe0000/my-awesome-copilot.git .github/copilot-config
+
+# 建立符號連結 (Create symbolic links)
+ln -s .github/copilot-config/.github/instructions .github/instructions
+ln -s .github/copilot-config/.github/prompts .github/prompts
+```
+
+### 基本使用 / Basic Usage
+
+#### 使用指令 / Using Instructions
+
+GitHub Copilot 會自動讀取 `.github/instructions/` 目錄下的指令檔案。指令會根據 `applyTo` 欄位自動套用到對應的檔案類型。
+
+> [!TIP]
+> 指令檔案使用 YAML front matter 定義適用範圍。例如:
+> ```yaml
+> ---
+> applyTo: '**/*.ts'
+> description: 'TypeScript coding standards'
+> ---
+> ```
+
+#### 使用提示範本 / Using Prompt Templates
+
+在 GitHub Copilot Chat 中使用 `/` 指令啟動提示範本:
+
+```markdown
+# 產生繁中雙語 README (推薦)
+# Generate bilingual README (Recommended)
+Follow instructions in [create-readme-comprehensive.prompt.md](file:///.github/prompts/create-readme-comprehensive.prompt.md)
+
+# 產生英文 README (快速)
+# Generate English README (Quick)
+Follow instructions in [create-readme-quick.prompt.md](file:///.github/prompts/create-readme-quick.prompt.md)
+
+# 標準化 Git 提交訊息
+# Standardize Git commit message
+Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/conventional-commit.prompt.md)
+```
+
+#### 使用 AI 代理 / Using AI Agents
+
+在 GitHub Copilot Chat 中使用 `@` 標記啟用代理:
+
+```bash
+# 架構設計諮詢 (Architecture design consultation)
+@arch 請幫我設計一個微服務架構
+
+# 查詢最新函式庫文件 (Query latest library documentation)
+@context7 React 18 的新功能有哪些?
+
+# 建立 PRD 文件 (Create PRD document)
+@prd 我需要一個使用者認證系統的需求文件
+```
+
+## 專案結構 / Project Structure
 
 ```
-.github/
-├── instructions/          # GitHub Copilot 指令檔案
-│   ├── devops-core-principles.instructions.md
-│   ├── security-and-owasp.instructions.md
-│   ├── performance-optimization.instructions.md
-│   └── ...
-└── prompts/              # 提示範本
-    ├── create-readme-comprehensive.prompt.md
-    ├── create-readme-quick.prompt.md
-    ├── copilot-instructions-blueprint-generator.prompt.md
-    └── ...
+my-awesome-copilot/
+├── .github/
+│   ├── agents/                    # AI 代理配置 (AI Agents Configuration)
+│   │   ├── arch.agent.md         # 架構設計專家 (Architecture Expert)
+│   │   ├── context7.agent.md     # 文件查詢專家 (Documentation Expert)
+│   │   ├── critical-thinking.agent.md  # 批判思考模式 (Critical Thinking)
+│   │   ├── playwright-tester.agent.md  # 測試自動化 (Test Automation)
+│   │   ├── prd.agent.md          # PRD 產生器 (PRD Generator)
+│   │   ├── principal-software-engineer.agent.md  # 首席工程師 (Principal Engineer)
+│   │   └── terraform.agent.md    # Terraform 專家 (Terraform Expert)
+│   │
+│   ├── instructions/              # GitHub Copilot 指令 (Instructions)
+│   │   ├── devops-core-principles.instructions.md
+│   │   ├── security-and-owasp.instructions.md
+│   │   ├── performance-optimization.instructions.md
+│   │   ├── spec-driven-workflow-v1.instructions.md
+│   │   ├── memory-bank.instructions.md
+│   │   ├── containerization-docker-best-practices.instructions.md
+│   │   ├── self-explanatory-code-commenting.instructions.md
+│   │   ├── taming-copilot.instructions.md
+│   │   ├── copilot-thought-logging.instructions.md
+│   │   └── markdown.instructions.md
+│   │
+│   └── prompts/                   # 提示範本 (Prompt Templates)
+│       ├── create-readme-comprehensive.prompt.md  # ⭐ 推薦
+│       ├── create-readme-quick.prompt.md
+│       ├── copilot-instructions-blueprint-generator.prompt.md
+│       ├── technology-stack-blueprint-generator.prompt.md
+│       ├── conventional-commit.prompt.md
+│       ├── create-implementation-plan.prompt.md
+│       ├── create-architectural-decision-record.prompt.md
+│       ├── review-and-refactor.prompt.md
+│       └── ... (更多範本 / more templates)
+│
+├── CONTRIBUTING.md               # 貢獻指南 (Contributing Guide)
+├── LICENSE                       # MIT 授權 (MIT License)
+└── README.md                     # 本檔案 (This file)
 ```
+
+### 目錄說明 / Directory Description
+
+| 目錄 / Directory | 用途 / Purpose |
+|-----------------|---------------|
+| `.github/agents/` | AI 代理配置檔案,提供專業領域的輔助功能 |
+| `.github/instructions/` | GitHub Copilot 指令,定義程式碼產生規則和最佳實踐 |
+| `.github/prompts/` | 可重用的提示範本,用於常見開發任務 |
 
 ## 快速參考索引
 
@@ -470,6 +617,8 @@ My Awesome Copilot 是一個全面的 GitHub Copilot 指令和提示系統，設
   - **Monorepo 支援**: 自動偵測並適配 Monorepo 架構
   - **情境調整**: 公開專案、企業專案等不同規則
   - **GFM 完整支援**: GitHub admonitions, tables, task lists
+  - **📁 檔案命名與目錄規範**: 強制使用 kebab-case,標準目錄結構 (docs/, docs/assets/images/)
+  - **📏 文件大小管理**: 自動偵測文件大小,提供拆分建議 (超過 6,000 字)
 - **三種深度級別**:
   - **Minimal** (小型專案): 5 核心章節, 500-1000 字, 無圖表
   - **Standard** (中型專案): 10+ 章節, 1500-3000 字, 1-2 圖表
@@ -551,6 +700,9 @@ function createUser(data: User): void {
 - **用途**: 快速產生英文 README (簡潔版)
 - **功能**:
   - 純英文輸出
+  - **📁 檔案命名規範**: kebab-case 標準化 (getting-started.md, api-reference.md)
+  - **🗂️ 標準目錄結構**: docs/ 目錄組織規範與 SEO 友善路徑
+  - **📏 文件分割指南**: README 大小管理策略與拆分最佳實踐
   - 參考優秀開源專案範例 (Azure Samples, sinedied 專案)
   - 使用 GFM (GitHub Flavored Markdown) 格式
   - 簡潔明瞭的結構
@@ -873,6 +1025,152 @@ Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/c
 這會產生符合 Conventional Commits 規範的提交訊息並自動執行提交。
 
 ## 最佳實踐
+
+### 檔案命名與目錄結構規範
+
+#### 📝 檔案命名規則
+
+**必須使用 kebab-case (小寫加連字號):**
+
+```markdown
+✅ 正確範例:
+- getting-started.md
+- installation-guide.md
+- api-reference.md
+- troubleshooting-common-issues.md
+
+❌ 錯誤範例:
+- GettingStarted.md (駝峰式)
+- install_guide.md (蛇形)
+- API-Reference.md (混合大小寫)
+```
+
+**命名原因:**
+- **URL 友善**: Linux 伺服器區分大小寫,kebab-case 避免連結錯誤
+- **SEO 最佳化**: 搜尋引擎將連字號視為字詞分隔符,提升可讀性
+- **可讀性**: 比底線 `_` 更清晰易讀
+- **業界標準**: GitHub、GitLab 等平台的慣例
+
+#### 🗂️ 標準目錄架構
+
+```
+project-root/
+├── README.md                 # 專案概述與快速開始 (必須)
+├── CONTRIBUTING.md           # 貢獻指南 (建議)
+├── CHANGELOG.md              # 變更日誌 (建議)
+├── LICENSE                   # 授權檔案 (必須)
+├── CODE_OF_CONDUCT.md        # 行為準則 (選用)
+│
+├── docs/                     # 📚 文件根目錄
+│   ├── index.md             # 文件首頁/索引
+│   ├── getting-started.md   # 快速開始指南
+│   ├── installation.md      # 安裝說明
+│   ├── configuration.md     # 配置指南
+│   │
+│   ├── api/                 # API 文件
+│   │   ├── overview.md
+│   │   ├── authentication.md
+│   │   └── endpoints.md
+│   │
+│   ├── tutorials/           # 教學指南
+│   │   ├── basic-usage.md
+│   │   └── advanced-features.md
+│   │
+│   ├── guides/              # 進階指南
+│   │   ├── deployment.md
+│   │   └── troubleshooting.md
+│   │
+│   └── assets/              # 靜態資源
+│       └── images/          # 圖片資源
+│           ├── architecture-diagram.png
+│           └── workflow.svg
+│
+└── src/                     # 原始程式碼
+```
+
+**目錄說明:**
+
+| 目錄 | 用途 | 必要性 |
+|------|------|--------|
+| `docs/` | 所有專案文件的根目錄 | 必須 |
+| `docs/assets/images/` | 儲存所有靜態圖片 | 必須 |
+| `docs/api/` | API 參考文件 | 視需求 |
+| `docs/tutorials/` | 教學與範例 | 建議 |
+| `docs/guides/` | 進階指南 | 建議 |
+
+#### 📏 README 文件大小管理
+
+**原則: README.md 應保持簡潔,複雜專案應拆分文件**
+
+**大小指引:**
+
+🟢 **合理範圍 (推薦)**
+- Minimal 深度: 500-1,000 字
+- Standard 深度: 1,500-3,000 字
+- Comprehensive 深度: 3,000-6,000 字
+
+🟡 **需要優化 (建議拆分)**
+- 單一檔案超過 6,000 字
+- 包含超過 20 個章節
+- 程式碼範例超過 10 個
+- 圖表超過 10 個
+
+🔴 **必須拆分 (強制要求)**
+- 單一檔案超過 10,000 字
+- 包含超過 30 個章節
+- 滾動超過 5 個螢幕高度
+
+**拆分策略範例:**
+
+*情境 1: API 文件過於龐大*
+
+```markdown
+## README.md (3,000 字) ✅
+- 快速開始
+- 安裝
+- 基本使用
+- → [完整 API 文件](docs/api/README.md)
+
+## docs/api/README.md ✅
+- API 概覽
+- [認證](docs/api/authentication.md)
+- [端點參考](docs/api/endpoints.md)
+- [錯誤處理](docs/api/error-handling.md)
+```
+
+*情境 2: Monorepo 多專案*
+
+```markdown
+## README.md (根目錄) ✅
+- 專案總覽
+- Monorepo 結構
+- 快速開始
+- 各子專案連結
+
+## packages/frontend/README.md ✅
+- React 前端專案文件
+
+## packages/backend/README.md ✅
+- Node.js 後端專案文件
+```
+
+**文件連結範例:**
+
+```markdown
+## 詳細文件 / Detailed Documentation
+
+想了解更多?請參閱以下文件:
+
+- 📖 [完整安裝指南](docs/installation.md) - 詳細安裝步驟與故障排除
+- 🔧 [配置參考](docs/configuration.md) - 所有配置選項說明
+- 🚀 [部署指南](docs/deployment/README.md) - 多環境部署策略
+- 📚 [API 文件](docs/api/README.md) - 完整 API 參考
+- 🎓 [教學指南](docs/tutorials/README.md) - 逐步教學範例
+- ❓ [故障排除](docs/troubleshooting.md) - 常見問題與解決方案
+
+> [!TIP]
+> 新手建議從 [快速開始指南](docs/getting-started.md) 開始!
+```
 
 ### 指令檔案自訂
 

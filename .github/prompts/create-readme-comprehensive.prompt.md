@@ -673,6 +673,273 @@ const greeting = "Hello, World!";
 
 ---
 
+### Phase 5: Directory Structure & File Organization Standards
+
+**目標:** 確保文件結構遵循最佳實踐,提升可維護性與 SEO
+
+#### 5.1 檔案命名規範
+
+**必須使用 kebab-case (小寫加連字號):**
+
+```markdown
+## 檔案命名規範 / File Naming Conventions
+
+### 正確範例 ✅
+- `getting-started.md`
+- `installation-guide.md`
+- `api-reference.md`
+- `troubleshooting-common-issues.md`
+
+### 錯誤範例 ❌
+- `GettingStarted.md` (駝峰式)
+- `install_guide.md` (蛇形)
+- `API-Reference.md` (混合大小寫)
+- `TroubleShooting.md` (Pascal 命名)
+
+### 命名原因 / Rationale
+
+> [!IMPORTANT]
+> **為什麼使用 kebab-case?**
+> - **URL 友善**: Linux 伺服器區分大小寫,kebab-case 避免連結錯誤
+> - **SEO 最佳化**: 搜尋引擎將連字號視為字詞分隔符,提升可讀性
+> - **可讀性**: 比底線 `_` 更清晰易讀
+> - **業界標準**: GitHub、GitLab 等平台的慣例
+```
+
+#### 5.2 目錄組織結構
+
+**標準目錄架構:**
+
+```markdown
+## 專案目錄結構 / Project Structure
+
+```
+project-root/
+├── README.md                 # 專案概述與快速開始 (必須)
+├── CONTRIBUTING.md           # 貢獻指南 (建議)
+├── CHANGELOG.md              # 變更日誌 (建議)
+├── LICENSE                   # 授權檔案 (必須)
+├── CODE_OF_CONDUCT.md        # 行為準則 (選用)
+│
+├── docs/                     # 📚 文件根目錄
+│   ├── index.md             # 文件首頁/索引
+│   ├── getting-started.md   # 快速開始指南
+│   ├── installation.md      # 安裝說明
+│   ├── configuration.md     # 配置指南
+│   │
+│   ├── api/                 # API 文件
+│   │   ├── overview.md
+│   │   ├── authentication.md
+│   │   └── endpoints.md
+│   │
+│   ├── tutorials/           # 教學指南
+│   │   ├── basic-usage.md
+│   │   └── advanced-features.md
+│   │
+│   ├── guides/              # 進階指南
+│   │   ├── deployment.md
+│   │   └── troubleshooting.md
+│   │
+│   └── assets/              # 靜態資源
+│       └── images/          # 圖片資源
+│           ├── architecture-diagram.png
+│           └── workflow.svg
+│
+└── src/                     # 原始程式碼
+```
+```
+
+**目錄說明:**
+
+| 目錄 / Directory | 用途 / Purpose | 必要性 |
+|-----------------|---------------|-------|
+| `docs/` | 所有專案文件的根目錄 | 必須 |
+| `docs/assets/images/` | 儲存所有靜態圖片 | 必須 |
+| `docs/api/` | API 參考文件 | 視需求 |
+| `docs/tutorials/` | 教學與範例 | 建議 |
+| `docs/guides/` | 進階指南 | 建議 |
+```
+
+#### 5.3 README 文件大小管理
+
+**原則: README.md 應保持簡潔,複雜專案應拆分文件**
+
+```markdown
+## README 文件大小指引 / README Size Guidelines
+
+### 🟢 合理範圍 (推薦)
+- **Minimal 深度**: 500-1,000 字
+- **Standard 深度**: 1,500-3,000 字
+- **Comprehensive 深度**: 3,000-6,000 字
+
+### 🟡 需要優化 (建議拆分)
+- 單一檔案超過 **6,000 字**
+- 包含超過 **20 個章節**
+- 程式碼範例超過 **10 個**
+- 圖表超過 **10 個**
+
+### 🔴 必須拆分 (強制要求)
+- 單一檔案超過 **10,000 字**
+- 包含超過 **30 個章節**
+- 滾動超過 **5 個螢幕高度**
+
+### 拆分策略 / Splitting Strategy
+
+#### 情境 1: API 文件過於龐大
+
+**拆分前:**
+```markdown
+## README.md (12,000 字)
+- 快速開始
+- 安裝
+- API 參考 (5,000 字) ❌ 太長
+  - 認證
+  - 端點 (30+ 個)
+  - 錯誤碼
+```
+
+**拆分後:**
+```markdown
+## README.md (3,000 字) ✅
+- 快速開始
+- 安裝
+- 基本使用
+- → [完整 API 文件](docs/api/README.md)
+
+## docs/api/README.md ✅
+- API 概述
+- [認證](authentication.md)
+- [端點參考](endpoints.md)
+- [錯誤處理](error-handling.md)
+```
+
+#### 情境 2: 部署指南過於複雜
+
+**拆分前:**
+```markdown
+## README.md (15,000 字)
+- 部署 (8,000 字) ❌
+  - Docker 部署
+  - Kubernetes 部署
+  - AWS 部署
+  - Azure 部署
+  - 監控設定
+```
+
+**拆分後:**
+```markdown
+## README.md ✅
+- 快速部署 (Docker)
+- → [完整部署指南](docs/deployment/README.md)
+
+## docs/deployment/ ✅
+- README.md (概述)
+- docker-deployment.md
+- kubernetes-deployment.md
+- aws-deployment.md
+- azure-deployment.md
+- monitoring-setup.md
+```
+
+#### 情境 3: 多語言 Monorepo
+
+**拆分前:**
+```markdown
+## README.md (20,000 字) ❌
+- 專案概述
+- 前端專案 (React)
+- 後端專案 (Node.js)
+- 行動端專案 (React Native)
+- 共用函式庫
+```
+
+**拆分後:**
+```markdown
+## README.md (根目錄) ✅
+- 專案總覽
+- Monorepo 結構
+- 快速開始
+- 各子專案連結
+
+## packages/frontend/README.md ✅
+- React 前端專案文件
+
+## packages/backend/README.md ✅
+- Node.js 後端專案文件
+
+## packages/mobile/README.md ✅
+- React Native 行動端文件
+```
+
+### 拆分檢查清單 / Splitting Checklist
+
+**當 README.md 出現以下情況時,應考慮拆分:**
+
+- [ ] 單一章節超過 1,500 字
+- [ ] 包含 5+ 個詳細的配置範例
+- [ ] 有完整的 API 參考 (10+ 端點)
+- [ ] 多環境部署指南 (3+ 環境)
+- [ ] 包含複雜的故障排除章節 (10+ 問題)
+- [ ] 有詳細的架構說明 (5+ 圖表)
+- [ ] 多個獨立的教學指南 (3+ 教學)
+
+**拆分後的 README.md 應包含:**
+
+- [ ] 專案一句話描述
+- [ ] 核心功能清單 (3-5 項)
+- [ ] 快速開始 (3-5 步驟)
+- [ ] 基本使用範例 (1-2 個)
+- [ ] 連結到詳細文件
+- [ ] 貢獻與授權資訊
+
+**文件連結格式:**
+
+```markdown
+## 詳細文件 / Detailed Documentation
+
+想了解更多?請參閱以下文件:
+
+- 📖 [完整安裝指南](docs/installation.md) - 詳細安裝步驟與故障排除
+- 🔧 [配置參考](docs/configuration.md) - 所有配置選項說明
+- 🚀 [部署指南](docs/deployment/README.md) - 多環境部署策略
+- 📚 [API 文件](docs/api/README.md) - 完整 API 參考
+- 🎓 [教學指南](docs/tutorials/README.md) - 逐步教學範例
+- ❓ [故障排除](docs/troubleshooting.md) - 常見問題與解決方案
+
+> [!TIP]
+> 新手建議從 [快速開始指南](docs/getting-started.md) 開始!
+```
+```
+
+#### 5.4 整合到文件生成流程
+
+**在生成 README.md 時自動執行:**
+
+1. **偵測文件大小** (Phase 1 擴充):
+   ```python
+   estimated_word_count = calculate_estimated_words(complexity_level)
+   if estimated_word_count > 6000:
+       recommend_splitting = True
+       suggest_split_strategy()
+   ```
+
+2. **建議拆分點** (Phase 3 擴充):
+   - 當章節內容超過 1,500 字時,建議拆分為獨立檔案
+   - 自動生成對應的 `docs/` 目錄結構
+   - 提供連結到詳細文件的範本
+
+3. **輸出拆分建議**:
+   ```markdown
+   > [!WARNING]
+   > **文件大小警告**
+   > 偵測到 README.md 將超過 8,000 字,建議拆分以下章節:
+   > - API 文件 → `docs/api/README.md`
+   > - 部署指南 → `docs/deployment/README.md`
+   > - 故障排除 → `docs/troubleshooting.md`
+   ```
+
+---
+
 ## Execution Guidelines
 
 ### Step-by-Step Process
@@ -808,6 +1075,10 @@ def calculate_complexity(project_path):
 - [ ] **排除章節**: 未包含 LICENSE, CONTRIBUTING, CHANGELOG
 - [ ] **簡潔性**: 內容精簡,避免冗餘
 - [ ] **可讀性**: 段落清晰,排版美觀
+- [ ] **檔案命名**: 所有文件連結使用 kebab-case
+- [ ] **目錄結構**: 遵循標準目錄架構 (docs/, docs/assets/images/)
+- [ ] **文件大小**: README.md 未超過建議字數上限,或已提供拆分建議
+- [ ] **文件連結**: 所有拆分文件的連結正確且可訪問
 
 ---
 
