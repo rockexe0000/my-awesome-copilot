@@ -27,13 +27,13 @@
 
 | Agent 名稱 | 檔案 | 主要職責 | 核心特色 |
 |------------|------|----------|----------|
-| **Senior Cloud Architect** | [arch.agent.md](../.github/agents/arch.agent.md) | 現代架構設計模式專家，NFR 需求分析，建立全面的架構圖表和文件 | • 不產生程式碼，專注架構設計<br>• 必須產生 6 種 Mermaid 圖表（系統上下文、元件、部署、資料流、時序、其他相關圖）<br>• 分階段開發方法（Initial Phase → Final Phase）<br>• NFR 詳細分析（可擴展性、效能、安全性、可靠性、可維護性）<br>• 輸出格式：`{app}_Architecture.md` |
-| **Context7 Documentation Expert** | [context7.agent.md](../.github/agents/context7.agent.md) | 函式庫/框架最新文件查詢專家，版本升級建議與 API 精確性保證 | • **強制使用 Context7 MCP** 查詢最新官方文件<br>• 禁止憑記憶或訓練資料回答<br>• 自動版本比對（當前 vs 最新）<br>• 多語言生態系統支援（JS/TS, Python, Ruby, Go, Rust, PHP, Java, .NET）<br>• 升級指南自動產生（Breaking Changes、Migration Steps）<br>• 工作流程：`resolve-library-id` → `get-library-docs` → 版本檢查 → 回答 |
-| **Critical Thinking Mode** | [critical-thinking.agent.md](../.github/agents/critical-thinking.agent.md) | 挑戰假設，促進批判性思考，確保最佳解決方案和結果 | • 不提供解決方案或直接答案<br>• 持續追問「為什麼」（Why）<br>• 扮演魔鬼代言人角色<br>• 戰略性長期影響思考<br>• 細節導向但簡潔問題<br>• 一次專注一個問題 |
-| **Playwright Tester Mode** | [playwright-tester.agent.md](../.github/agents/playwright-tester.agent.md) | Playwright 測試專家，網站探索、測試產生與執行、測試改進 | • **使用 Playwright MCP** 導航網站<br>• 先探索網站再產生測試（不提前編碼）<br>• TypeScript 測試產生<br>• 測試執行、診斷失敗、迭代修正<br>• 結構化可維護測試<br>• 功能摘要文件化 |
-| **Create PRD Chat Mode** | [prd.agent.md](../.github/agents/prd.agent.md) | 產品需求文件（PRD）產生專家，用戶故事、驗收標準、技術考量 | • 產生完整 `prd.md` 文件<br>• 先提問釐清需求（3-5 個問題）<br>• 分析程式碼庫以了解現有架構<br>• 唯一需求 ID（GH-001）<br>• 可測試的用戶故事與驗收標準<br>• 支援自動建立 GitHub Issues |
-| **Principal Software Engineer** | [principal-software-engineer.agent.md](../.github/agents/principal-software-engineer.agent.md) | 首席工程師級指導，工程卓越、技術領導、務實實作（Martin Fowler 風格） | • 工程基礎原則（Gang of Four, SOLID, DRY, YAGNI, KISS）<br>• 清晰程式碼實踐<br>• 測試金字塔策略（單元、整合、端對端）<br>• **技術債務自動管理**（使用 `create_issue` 追蹤）<br>• 需求分析與風險評估<br>• 平衡工程卓越與交付需求 |
-| **Terraform Agent** | [terraform.agent.md](../.github/agents/terraform.agent.md) | Terraform IaC 專家，自動化 HCP Terraform 工作流程，基礎設施最佳實踐 | • **使用 Terraform MCP Server** 自動化<br>• Registry 智慧查詢（Public + Private）<br>• 自動解析最新 Provider/Module 版本<br>• HCP Terraform Workspace 管理<br>• Run 編排（Plan → Apply）<br>• **2-space 縮排，對齊 `=`**<br>• 必須包含檔案：`main.tf`, `variables.tf`, `outputs.tf`, `README.md`<br>• Backend 配置自動產生 |
+| **Senior Cloud Architect** | [arch.agent.md](../agents/arch.agent.md) | 現代架構設計模式專家，NFR 需求分析，建立全面的架構圖表和文件 | • 不產生程式碼，專注架構設計<br>• 必須產生 6 種 Mermaid 圖表（系統上下文、元件、部署、資料流、時序、其他相關圖）<br>• 分階段開發方法（Initial Phase → Final Phase）<br>• NFR 詳細分析（可擴展性、效能、安全性、可靠性、可維護性）<br>• 輸出格式：`{app}_Architecture.md` |
+| **Context7 Documentation Expert** | [context7.agent.md](../agents/context7.agent.md) | 函式庫/框架最新文件查詢專家，版本升級建議與 API 精確性保證 | • **強制使用 Context7 MCP** 查詢最新官方文件<br>• 禁止憑記憶或訓練資料回答<br>• 自動版本比對（當前 vs 最新）<br>• 多語言生態系統支援（JS/TS, Python, Ruby, Go, Rust, PHP, Java, .NET）<br>• 升級指南自動產生（Breaking Changes、Migration Steps）<br>• 工作流程：`resolve-library-id` → `get-library-docs` → 版本檢查 → 回答 |
+| **Critical Thinking Mode** | [critical-thinking.agent.md](../agents/critical-thinking.agent.md) | 挑戰假設，促進批判性思考，確保最佳解決方案和結果 | • 不提供解決方案或直接答案<br>• 持續追問「為什麼」（Why）<br>• 扮演魔鬼代言人角色<br>• 戰略性長期影響思考<br>• 細節導向但簡潔問題<br>• 一次專注一個問題 |
+| **Playwright Tester Mode** | [playwright-tester.agent.md](../agents/playwright-tester.agent.md) | Playwright 測試專家，網站探索、測試產生與執行、測試改進 | • **使用 Playwright MCP** 導航網站<br>• 先探索網站再產生測試（不提前編碼）<br>• TypeScript 測試產生<br>• 測試執行、診斷失敗、迭代修正<br>• 結構化可維護測試<br>• 功能摘要文件化 |
+| **Create PRD Chat Mode** | [prd.agent.md](../agents/prd.agent.md) | 產品需求文件（PRD）產生專家，用戶故事、驗收標準、技術考量 | • 產生完整 `prd.md` 文件<br>• 先提問釐清需求（3-5 個問題）<br>• 分析程式碼庫以了解現有架構<br>• 唯一需求 ID（GH-001）<br>• 可測試的用戶故事與驗收標準<br>• 支援自動建立 GitHub Issues |
+| **Principal Software Engineer** | [principal-software-engineer.agent.md](../agents/principal-software-engineer.agent.md) | 首席工程師級指導，工程卓越、技術領導、務實實作（Martin Fowler 風格） | • 工程基礎原則（Gang of Four, SOLID, DRY, YAGNI, KISS）<br>• 清晰程式碼實踐<br>• 測試金字塔策略（單元、整合、端對端）<br>• **技術債務自動管理**（使用 `create_issue` 追蹤）<br>• 需求分析與風險評估<br>• 平衡工程卓越與交付需求 |
+| **Terraform Agent** | [terraform.agent.md](../agents/terraform.agent.md) | Terraform IaC 專家，自動化 HCP Terraform 工作流程，基礎設施最佳實踐 | • **使用 Terraform MCP Server** 自動化<br>• Registry 智慧查詢（Public + Private）<br>• 自動解析最新 Provider/Module 版本<br>• HCP Terraform Workspace 管理<br>• Run 編排（Plan → Apply）<br>• **2-space 縮排，對齊 `=`**<br>• 必須包含檔案：`main.tf`, `variables.tf`, `outputs.tf`, `README.md`<br>• Backend 配置自動產生 |
 
 ## 如何使用 Custom Agents
 
@@ -46,10 +46,10 @@
 #### 方法 2: 手動下載安裝
 ```bash
 # 下載單個 agent
-curl -o .github/agents/arch.agent.md https://raw.githubusercontent.com/rockexe0000/my-awesome-copilot/main/.github/agents/arch.agent.md
+curl -o .github/agents/arch.agent.md https://raw.githubusercontent.com/rockexe0000/my-awesome-copilot/main/agents/arch.agent.md
 
 # 或複製整個 agents 目錄到您的專案
-cp -r /path/to/my-awesome-copilot/.github/agents /path/to/your/project/.github/
+cp -r /path/to/my-awesome-copilot/agents /path/to/your/project/.github/
 ```
 
 ### MCP Server 設定
@@ -116,7 +116,7 @@ gh copilot @arch "Design microservices architecture"
 
 ### 1. Senior Cloud Architect
 
-**檔案位置**: [`.github/agents/arch.agent.md`](../.github/agents/arch.agent.md)
+**檔案位置**: [`agents/arch.agent.md`](../agents/arch.agent.md)
 
 **主要職責:**
 - 現代架構設計模式專家
@@ -168,7 +168,7 @@ gh copilot @arch "Design microservices architecture"
 
 ### 2. Context7 Documentation Expert
 
-**檔案位置**: [`.github/agents/context7.agent.md`](../.github/agents/context7.agent.md)
+**檔案位置**: [`agents/context7.agent.md`](../agents/context7.agent.md)
 
 **主要職責:**
 - 函式庫/框架最新文件查詢專家
@@ -236,7 +236,7 @@ gh copilot @arch "Design microservices architecture"
 
 ### 3. Critical Thinking Mode
 
-**檔案位置**: [`.github/agents/critical-thinking.agent.md`](../.github/agents/critical-thinking.agent.md)
+**檔案位置**: [`agents/critical-thinking.agent.md`](../agents/critical-thinking.agent.md)
 
 **主要職責:**
 - 挑戰假設
@@ -280,7 +280,7 @@ gh copilot @arch "Design microservices architecture"
 
 ### 4. Playwright Tester Mode
 
-**檔案位置**: [`.github/agents/playwright-tester.agent.md`](../.github/agents/playwright-tester.agent.md)
+**檔案位置**: [`agents/playwright-tester.agent.md`](../agents/playwright-tester.agent.md)
 
 **主要職責:**
 - Playwright 測試專家
@@ -338,7 +338,7 @@ test.describe('Login Flow', () => {
 
 ### 5. Create PRD Chat Mode
 
-**檔案位置**: [`.github/agents/prd.agent.md`](../.github/agents/prd.agent.md)
+**檔案位置**: [`agents/prd.agent.md`](../agents/prd.agent.md)
 
 **主要職責:**
 - 產品需求文件 (PRD) 產生專家
@@ -408,7 +408,7 @@ So that I can access my personalized dashboard
 
 ### 6. Principal Software Engineer
 
-**檔案位置**: [`.github/agents/principal-software-engineer.agent.md`](../.github/agents/principal-software-engineer.agent.md)
+**檔案位置**: [`agents/principal-software-engineer.agent.md`](../agents/principal-software-engineer.agent.md)
 
 **主要職責:**
 - 首席工程師級指導
@@ -479,7 +479,7 @@ So that I can access my personalized dashboard
 
 ### 7. Terraform Agent
 
-**檔案位置**: [`.github/agents/terraform.agent.md`](../.github/agents/terraform.agent.md)
+**檔案位置**: [`agents/terraform.agent.md`](../agents/terraform.agent.md)
 
 **主要職責:**
 - Terraform IaC (Infrastructure as Code) 專家

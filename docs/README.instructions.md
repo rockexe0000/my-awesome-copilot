@@ -41,7 +41,7 @@ My Awesome Copilot 指令系統是一套全面的 GitHub Copilot 指令集合，
 
 ```bash
 # 複製指令檔案到您的專案
-cp -r .github/instructions /path/to/your/project/.github/
+cp -r instructions /path/to/your/project/.github/
 ```
 
 **方法 2: Git Submodule (推薦)**
@@ -52,12 +52,15 @@ cd /path/to/your/project
 git submodule add https://github.com/rockexe0000/my-awesome-copilot.git .github/copilot-config
 
 # 建立符號連結
-ln -s .github/copilot-config/.github/instructions .github/instructions
+ln -s .github/copilot-config/instructions .github/instructions
 ```
 
 ### 整合到現有專案
 
 GitHub Copilot 會自動讀取 `.github/instructions/` 目錄下的指令檔案。指令會根據 `applyTo` 欄位自動套用到對應的檔案類型。
+
+> [!NOTE]
+> 本專案的指令檔案位於 `instructions/` 目錄,使用時需複製或符號連結到 `.github/instructions/`
 
 **專案結構範例：**
 
@@ -102,7 +105,7 @@ description: 'TypeScript coding standards'
 
 #### spec-driven-workflow-v1.instructions.md
 
-[查看完整檔案](../.github/instructions/spec-driven-workflow-v1.instructions.md)
+[查看完整檔案](../instructions/spec-driven-workflow-v1.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 規格驅動工作流程 v1 提供結構化的軟體開發方法，確保需求清晰定義、設計仔細規劃、實作徹底記錄和驗證
@@ -125,7 +128,7 @@ description: 'TypeScript coding standards'
 
 #### memory-bank.instructions.md
 
-[查看完整檔案](../.github/instructions/memory-bank.instructions.md)
+[查看完整檔案](../instructions/memory-bank.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 專案知識、領域知識和偏好設定的記憶庫系統，用於在 AI 會話重置後保持專案上下文
@@ -147,7 +150,7 @@ description: 'TypeScript coding standards'
 
 #### copilot-thought-logging.instructions.md
 
-[查看完整檔案](../.github/instructions/copilot-thought-logging.instructions.md)
+[查看完整檔案](../instructions/copilot-thought-logging.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 在 Copilot 處理過程中查看其遵循的流程，可編輯以重塑互動或在需要後續追蹤時儲存
@@ -170,7 +173,7 @@ description: 'TypeScript coding standards'
 
 #### self-explanatory-code-commenting.instructions.md
 
-[查看完整檔案](../.github/instructions/self-explanatory-code-commenting.instructions.md)
+[查看完整檔案](../instructions/self-explanatory-code-commenting.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: GitHub Copilot 編寫註解的指南，以達到自我解釋的程式碼，減少不必要的註解
@@ -194,7 +197,7 @@ description: 'TypeScript coding standards'
 
 #### taming-copilot.instructions.md
 
-[查看完整檔案](../.github/instructions/taming-copilot.instructions.md)
+[查看完整檔案](../instructions/taming-copilot.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 防止 Copilot 在程式碼庫中造成破壞，保持其受控
@@ -217,7 +220,7 @@ description: 'TypeScript coding standards'
 
 #### markdown.instructions.md
 
-[查看完整檔案](../.github/instructions/markdown.instructions.md)
+[查看完整檔案](../instructions/markdown.instructions.md)
 
 - **適用範圍**: `**/*.md`
 - **描述**: 文件和內容建立標準
@@ -240,7 +243,7 @@ description: 'TypeScript coding standards'
 
 #### security-and-owasp.instructions.md
 
-[查看完整檔案](../.github/instructions/security-and-owasp.instructions.md)
+[查看完整檔案](../instructions/security-and-owasp.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 基於 OWASP Top 10 和業界最佳實務的全面安全編碼指令，適用於所有語言和框架
@@ -266,7 +269,7 @@ description: 'TypeScript coding standards'
 
 #### performance-optimization.instructions.md
 
-[查看完整檔案](../.github/instructions/performance-optimization.instructions.md)
+[查看完整檔案](../instructions/performance-optimization.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 針對所有語言、框架和堆疊的最全面、實用的效能優化指令，涵蓋前端、後端和資料庫最佳實務
@@ -293,7 +296,7 @@ description: 'TypeScript coding standards'
 
 #### devops-core-principles.instructions.md
 
-[查看完整檔案](../.github/instructions/devops-core-principles.instructions.md)
+[查看完整檔案](../instructions/devops-core-principles.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 涵蓋核心 DevOps 原則、文化 (CALMS) 和關鍵指標 (DORA) 的基礎指令，指導 GitHub Copilot 理解和推廣有效的軟體交付
@@ -321,7 +324,7 @@ description: 'TypeScript coding standards'
 
 #### containerization-docker-best-practices.instructions.md
 
-[查看完整檔案](../.github/instructions/containerization-docker-best-practices.instructions.md)
+[查看完整檔案](../instructions/containerization-docker-best-practices.instructions.md)
 
 - **適用範圍**: `**/Dockerfile`, `**/Dockerfile.*`, `**/*.dockerfile`, `**/docker-compose*.yml`, `**/docker-compose*.yaml`
 - **描述**: Docker 容器化與映像優化的完整最佳實務指南，涵蓋多階段建構、映像層優化、安全掃描和執行時最佳實務

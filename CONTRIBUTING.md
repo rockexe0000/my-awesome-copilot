@@ -103,17 +103,20 @@
 
 如果您想貢獻新的 GitHub Copilot 指令或提示範本：
 
-1. **指令檔案** (`.github/instructions/`)
+1. **指令檔案** (`instructions/`)
    - 使用 `.instructions.md` 副檔名
-   - 在檔案開頭包含 YAML front matter，說明適用範圍
+   - 在檔案開頭包含 YAML front matter,說明適用範圍
    - 提供清楚的說明和範例
    - 遵循現有指令的結構
 
-2. **提示檔案** (`.github/prompts/`)
+2. **提示檔案** (`prompts/`)
    - 使用 `.prompt.md` 副檔名
    - 提供清楚的使用說明
    - 包含範例輸出
    - 說明適用場景
+
+> [!NOTE]
+> 本專案的指令和提示檔案位於 `instructions/` 和 `prompts/` 目錄。使用時需要複製或符號連結到 `.github/` 目錄。
 
 ## 程式碼風格
 
@@ -126,14 +129,18 @@
 
 ```
 my-awesome-copilot/
-├── .github/
-│   ├── instructions/          # GitHub Copilot 指令檔案
-│   └── prompts/              # 提示範本
-├── README.md                 # 專案說明
-├── CONTRIBUTING.md          # 本檔案
-├── LICENSE                  # 授權資訊
-└── .gitignore              # Git 忽略規則
+├── agents/                  # AI 代理配置
+├── instructions/            # GitHub Copilot 指令檔案
+├── prompts/                # 提示範本
+├── docs/                   # 文件目錄
+├── README.md               # 專案說明
+├── CONTRIBUTING.md         # 本檔案
+├── LICENSE                 # 授權資訊
+└── .gitignore             # Git 忽略規則
 ```
+
+> [!NOTE]
+> `agents/`, `instructions/`, `prompts/` 目錄在使用時需要複製或符號連結到 `.github/` 目錄下。
 
 ## 版本發布
 

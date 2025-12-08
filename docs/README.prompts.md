@@ -11,20 +11,20 @@ Ready-to-use prompt templates for specific development scenarios and tasks, defi
 在 GitHub Copilot Chat 中使用以下格式:
 
 ```markdown
-Follow instructions in [prompt-file-name.prompt.md](file:///.github/prompts/prompt-file-name.prompt.md)
+Follow instructions in [prompt-file-name.prompt.md](file:///prompts/prompt-file-name.prompt.md)
 ```
 
 **範例:**
 
 ```markdown
 # 產生繁中雙語 README (推薦)
-Follow instructions in [create-readme-comprehensive.prompt.md](file:///.github/prompts/create-readme-comprehensive.prompt.md)
+Follow instructions in [create-readme-comprehensive.prompt.md](file:///prompts/create-readme-comprehensive.prompt.md)
 
 # 產生英文 README (快速)
-Follow instructions in [create-readme-quick.prompt.md](file:///.github/prompts/create-readme-quick.prompt.md)
+Follow instructions in [create-readme-quick.prompt.md](file:///prompts/create-readme-quick.prompt.md)
 
 # 標準化 Git 提交訊息
-Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/conventional-commit.prompt.md)
+Follow instructions in [conventional-commit.prompt.md](file:///prompts/conventional-commit.prompt.md)
 ```
 
 ### 在 VS Code 中安裝 (Optional)
@@ -44,7 +44,7 @@ Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/c
 
 #### create-readme-comprehensive.prompt.md ⭐ 推薦
 
-[查看完整檔案](../.github/prompts/create-readme-comprehensive.prompt.md)
+[查看完整檔案](../prompts/create-readme-comprehensive.prompt.md)
 
 - **用途**: 智慧型雙語 README 產生器,支援複雜度自動偵測與深度調整 (繁中優先)
 - **功能**:
@@ -136,7 +136,7 @@ function createUser(data: User): void {
 
 #### create-readme-quick.prompt.md
 
-[查看完整檔案](../.github/prompts/create-readme-quick.prompt.md)
+[查看完整檔案](../prompts/create-readme-quick.prompt.md)
 
 - **用途**: 快速產生英文 README (簡潔版)
 - **功能**:
@@ -175,7 +175,7 @@ function createUser(data: User): void {
 
 #### copilot-instructions-blueprint-generator.prompt.md
 
-[查看完整檔案](../.github/prompts/copilot-instructions-blueprint-generator.prompt.md)
+[查看完整檔案](../prompts/copilot-instructions-blueprint-generator.prompt.md)
 
 - **用途**: 建立全面的 copilot-instructions.md 檔案,指導 GitHub Copilot 產生符合專案標準的程式碼
 - **功能**:
@@ -188,7 +188,7 @@ function createUser(data: User): void {
 
 #### readme-blueprint-generator.prompt.md
 
-[查看完整檔案](../.github/prompts/readme-blueprint-generator.prompt.md)
+[查看完整檔案](../prompts/readme-blueprint-generator.prompt.md)
 
 - **用途**: 透過分析專案文件結構建立全面的 README.md
 - **功能**:
@@ -200,7 +200,7 @@ function createUser(data: User): void {
 
 #### technology-stack-blueprint-generator.prompt.md
 
-[查看完整檔案](../.github/prompts/technology-stack-blueprint-generator.prompt.md)
+[查看完整檔案](../prompts/technology-stack-blueprint-generator.prompt.md)
 
 - **用途**: 分析程式碼庫以建立詳細的架構文件,自動偵測技術堆疊
 - **功能**:
@@ -213,7 +213,7 @@ function createUser(data: User): void {
 
 #### create-agents.md.prompt.md
 
-[查看完整檔案](../.github/prompts/create-agentsmd.prompt.md)
+[查看完整檔案](../prompts/create-agentsmd.prompt.md)
 
 - **用途**: 為儲存庫建立高品質的 AGENTS.md 檔案
 - **功能**:
@@ -225,7 +225,7 @@ function createUser(data: User): void {
 
 #### create-architectural-decision-record.prompt.md
 
-[查看完整檔案](../.github/prompts/create-architectural-decision-record.prompt.md)
+[查看完整檔案](../prompts/create-architectural-decision-record.prompt.md)
 
 - **用途**: 建立針對 AI 優化的架構決策記錄 (ADR) 文件
 - **功能**:
@@ -237,7 +237,7 @@ function createUser(data: User): void {
 
 #### documentation-writer.prompt.md
 
-[查看完整檔案](../.github/prompts/documentation-writer.prompt.md)
+[查看完整檔案](../prompts/documentation-writer.prompt.md)
 
 - **用途**: Diátaxis 文件專家,建立高品質的軟體文件
 - **功能**:
@@ -251,7 +251,7 @@ function createUser(data: User): void {
 
 #### conventional-commit.prompt.md
 
-[查看完整檔案](../.github/prompts/conventional-commit.prompt.md)
+[查看完整檔案](../prompts/conventional-commit.prompt.md)
 
 - **用途**: 使用結構化 XML 格式生成符合 Conventional Commits 規範的提交訊息
 - **功能**:
@@ -263,7 +263,7 @@ function createUser(data: User): void {
 
 #### create-implementation-plan.prompt.md
 
-[查看完整檔案](../.github/prompts/create-implementation-plan.prompt.md)
+[查看完整檔案](../prompts/create-implementation-plan.prompt.md)
 
 - **用途**: 為新功能、重構、套件升級或架構變更建立新的實作計畫檔案
 - **功能**:
@@ -275,7 +275,7 @@ function createUser(data: User): void {
 
 #### update-implementation-plan.prompt.md
 
-[查看完整檔案](../.github/prompts/update-implementation-plan.prompt.md)
+[查看完整檔案](../prompts/update-implementation-plan.prompt.md)
 
 - **用途**: 基於新需求或更新需求更新現有的實作計畫檔案
 - **功能**:
@@ -287,7 +287,7 @@ function createUser(data: User): void {
 
 #### update-specification.prompt.md
 
-[查看完整檔案](../.github/prompts/update-specification.prompt.md)
+[查看完整檔案](../prompts/update-specification.prompt.md)
 
 - **用途**: 基於新需求或現有程式碼更新,更新現有的規格檔案,針對生成式 AI 消費優化
 - **功能**:
@@ -299,7 +299,7 @@ function createUser(data: User): void {
 
 #### prompt-builder.prompt.md
 
-[查看完整檔案](../.github/prompts/prompt-builder.prompt.md)
+[查看完整檔案](../prompts/prompt-builder.prompt.md)
 
 - **用途**: 引導使用者建立高品質的 GitHub Copilot 提示,具備適當的結構、工具和最佳實務
 - **功能**:
@@ -313,7 +313,7 @@ function createUser(data: User): void {
 
 #### review-and-refactor.prompt.md
 
-[查看完整檔案](../.github/prompts/review-and-refactor.prompt.md)
+[查看完整檔案](../prompts/review-and-refactor.prompt.md)
 
 - **用途**: 根據定義的指令審查和重構專案中的程式碼
 - **功能**:
@@ -325,7 +325,7 @@ function createUser(data: User): void {
 
 #### update-markdown-file-index.prompt.md
 
-[查看完整檔案](../.github/prompts/update-markdown-file-index.prompt.md)
+[查看完整檔案](../prompts/update-markdown-file-index.prompt.md)
 
 - **用途**: 使用指定資料夾中的檔案索引/表格更新 Markdown 檔案區段
 - **功能**:
@@ -337,7 +337,7 @@ function createUser(data: User): void {
 
 #### update-oo-component-documentation.prompt.md
 
-[查看完整檔案](../.github/prompts/update-oo-component-documentation.prompt.md)
+[查看完整檔案](../prompts/update-oo-component-documentation.prompt.md)
 
 - **用途**: 遵循業界最佳實務和架構文件標準更新現有的物件導向元件文件
 - **功能**:
@@ -351,7 +351,7 @@ function createUser(data: User): void {
 
 #### suggest-awesome-github-copilot-instructions.prompt.md
 
-[查看完整檔案](../.github/prompts/suggest-awesome-github-copilot-instructions.prompt.md)
+[查看完整檔案](../prompts/suggest-awesome-github-copilot-instructions.prompt.md)
 
 - **用途**: 基於當前儲存庫上下文和聊天歷史,從 awesome-copilot 儲存庫建議相關的 Copilot 指令檔案
 - **功能**:
@@ -363,7 +363,7 @@ function createUser(data: User): void {
 
 #### suggest-awesome-github-copilot-prompts.prompt.md
 
-[查看完整檔案](../.github/prompts/suggest-awesome-github-copilot-prompts.prompt.md)
+[查看完整檔案](../prompts/suggest-awesome-github-copilot-prompts.prompt.md)
 
 - **用途**: 基於當前儲存庫上下文和聊天歷史,從 awesome-copilot 儲存庫建議相關的提示檔案
 - **功能**:
@@ -375,7 +375,7 @@ function createUser(data: User): void {
 
 #### agent-builder.prompt.md
 
-[查看完整檔案](../.github/prompts/agent-builder.prompt.md)
+[查看完整檔案](../prompts/agent-builder.prompt.md)
 
 - **用途**: 引導使用者建立高品質的 GitHub Copilot Agent 定義檔案,具備適當的結構和最佳實務
 - **功能**:

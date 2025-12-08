@@ -286,13 +286,13 @@ code --version
 
 | Agent 名稱 | 主要職責 | 檔案 |
 |------------|---------|------|
-| **Senior Cloud Architect** | 架構設計與 NFR 分析 | [arch.agent.md](.github/agents/arch.agent.md) |
-| **Context7 Documentation Expert** | 最新函式庫文件查詢 | [context7.agent.md](.github/agents/context7.agent.md) |
-| **Critical Thinking Mode** | 批判性思考與決策挑戰 | [critical-thinking.agent.md](.github/agents/critical-thinking.agent.md) |
-| **Playwright Tester Mode** | 自動化測試產生與執行 | [playwright-tester.agent.md](.github/agents/playwright-tester.agent.md) |
-| **Create PRD Chat Mode** | 產品需求文件產生 | [prd.agent.md](.github/agents/prd.agent.md) |
-| **Principal Software Engineer** | 工程卓越與程式碼品質 | [principal-software-engineer.agent.md](.github/agents/principal-software-engineer.agent.md) |
-| **Terraform Agent** | IaC 與基礎設施自動化 | [terraform.agent.md](.github/agents/terraform.agent.md) |
+| **Senior Cloud Architect** | 架構設計與 NFR 分析 | [arch.agent.md](agents/arch.agent.md) |
+| **Context7 Documentation Expert** | 最新函式庫文件查詢 | [context7.agent.md](agents/context7.agent.md) |
+| **Critical Thinking Mode** | 批判性思考與決策挑戰 | [critical-thinking.agent.md](agents/critical-thinking.agent.md) |
+| **Playwright Tester Mode** | 自動化測試產生與執行 | [playwright-tester.agent.md](agents/playwright-tester.agent.md) |
+| **Create PRD Chat Mode** | 產品需求文件產生 | [prd.agent.md](agents/prd.agent.md) |
+| **Principal Software Engineer** | 工程卓越與程式碼品質 | [principal-software-engineer.agent.md](agents/principal-software-engineer.agent.md) |
+| **Terraform Agent** | IaC 與基礎設施自動化 | [terraform.agent.md](agents/terraform.agent.md) |
 
 ### 如何使用
 
@@ -323,24 +323,24 @@ code --version
 ### 快速預覽
 
 **🔄 開發流程與專案管理 (3 個)**
-- [Spec-driven Workflow](.github/instructions/spec-driven-workflow-v1.instructions.md) - 六階段開發循環 (ANALYZE → DESIGN → IMPLEMENT → VALIDATE → REFLECT → HANDOFF)
-- [Memory Bank](.github/instructions/memory-bank.instructions.md) - 專案上下文與任務管理系統
-- [Copilot Thought Logging](.github/instructions/copilot-thought-logging.instructions.md) - 處理過程追蹤
+- [Spec-driven Workflow](instructions/spec-driven-workflow-v1.instructions.md) - 六階段開發循環 (ANALYZE → DESIGN → IMPLEMENT → VALIDATE → REFLECT → HANDOFF)
+- [Memory Bank](instructions/memory-bank.instructions.md) - 專案上下文與任務管理系統
+- [Copilot Thought Logging](instructions/copilot-thought-logging.instructions.md) - 處理過程追蹤
 
 **📝 程式碼品質與規範 (3 個)**
-- [Self-explanatory Commenting](.github/instructions/self-explanatory-code-commenting.instructions.md) - 自我解釋的程式碼註解指南
-- [Taming Copilot](.github/instructions/taming-copilot.instructions.md) - 精確控制 Copilot 行為
-- [Markdown](.github/instructions/markdown.instructions.md) - Markdown 文件撰寫規範
+- [Self-explanatory Commenting](instructions/self-explanatory-code-commenting.instructions.md) - 自我解釋的程式碼註解指南
+- [Taming Copilot](instructions/taming-copilot.instructions.md) - 精確控制 Copilot 行為
+- [Markdown](instructions/markdown.instructions.md) - Markdown 文件撰寫規範
 
 **🔒 安全性 (1 個)**
-- [OWASP Security](.github/instructions/security-and-owasp.instructions.md) - OWASP Top 10 安全編碼實踐
+- [OWASP Security](instructions/security-and-owasp.instructions.md) - OWASP Top 10 安全編碼實踐
 
 **⚡ 效能優化 (1 個)**
-- [Performance Optimization](.github/instructions/performance-optimization.instructions.md) - 前端/後端/資料庫全方位優化
+- [Performance Optimization](instructions/performance-optimization.instructions.md) - 前端/後端/資料庫全方位優化
 
 **🚀 DevOps 與容器化 (2 個)**
-- [DevOps Principles](.github/instructions/devops-core-principles.instructions.md) - CALMS 框架與 DORA 四大指標
-- [Docker Best Practices](.github/instructions/containerization-docker-best-practices.instructions.md) - 容器化最佳實踐
+- [DevOps Principles](instructions/devops-core-principles.instructions.md) - CALMS 框架與 DORA 四大指標
+- [Docker Best Practices](instructions/containerization-docker-best-practices.instructions.md) - 容器化最佳實踐
 
 ### 如何使用
 
@@ -422,13 +422,13 @@ cd my-awesome-copilot
 
 ```bash
 # 複製指令檔案到您的專案 (Copy instructions to your project)
-cp -r .github/instructions /path/to/your/project/.github/
+cp -r instructions /path/to/your/project/.github/
 
 # 複製提示範本 (Copy prompt templates)
-cp -r .github/prompts /path/to/your/project/.github/
+cp -r prompts /path/to/your/project/.github/
 
 # 複製 AI 代理 (Optional: Copy AI agents)
-cp -r .github/agents /path/to/your/project/.github/
+cp -r agents /path/to/your/project/.github/
 ```
 
 #### 方法 2: Git Submodule (Recommended)
@@ -439,8 +439,8 @@ cd /path/to/your/project
 git submodule add https://github.com/rockexe0000/my-awesome-copilot.git .github/copilot-config
 
 # 建立符號連結 (Create symbolic links)
-ln -s .github/copilot-config/.github/instructions .github/instructions
-ln -s .github/copilot-config/.github/prompts .github/prompts
+ln -s .github/copilot-config/instructions .github/instructions
+ln -s .github/copilot-config/prompts .github/prompts
 ```
 
 ### 基本使用 / Basic Usage
@@ -457,6 +457,8 @@ GitHub Copilot 會自動讀取 `.github/instructions/` 目錄下的指令檔案�
 > description: 'TypeScript coding standards'
 > ---
 > ```
+>
+> **注意**: 本專案中的指令檔案實際位於 `instructions/` 目錄,使用時需要複製或符號連結到 `.github/instructions/`
 
 #### 使用提示範本 / Using Prompt Templates
 
@@ -465,15 +467,15 @@ GitHub Copilot 會自動讀取 `.github/instructions/` 目錄下的指令檔案�
 ```markdown
 # 產生繁中雙語 README (推薦)
 # Generate bilingual README (Recommended)
-Follow instructions in [create-readme-comprehensive.prompt.md](file:///.github/prompts/create-readme-comprehensive.prompt.md)
+Follow instructions in [create-readme-comprehensive.prompt.md](file:///prompts/create-readme-comprehensive.prompt.md)
 
 # 產生英文 README (快速)
 # Generate English README (Quick)
-Follow instructions in [create-readme-quick.prompt.md](file:///.github/prompts/create-readme-quick.prompt.md)
+Follow instructions in [create-readme-quick.prompt.md](file:///prompts/create-readme-quick.prompt.md)
 
 # 標準化 Git 提交訊息
 # Standardize Git commit message
-Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/conventional-commit.prompt.md)
+Follow instructions in [conventional-commit.prompt.md](file:///prompts/conventional-commit.prompt.md)
 ```
 
 > 📚 **更多提示範本**: 查看 [完整 Prompts 清單與使用指南](docs/README.prompts.md)
@@ -497,38 +499,37 @@ Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/c
 
 ```
 my-awesome-copilot/
-├── .github/
-│   ├── agents/                    # AI 代理配置 (AI Agents Configuration)
-│   │   ├── arch.agent.md         # 架構設計專家 (Architecture Expert)
-│   │   ├── context7.agent.md     # 文件查詢專家 (Documentation Expert)
-│   │   ├── critical-thinking.agent.md  # 批判思考模式 (Critical Thinking)
-│   │   ├── playwright-tester.agent.md  # 測試自動化 (Test Automation)
-│   │   ├── prd.agent.md          # PRD 產生器 (PRD Generator)
-│   │   ├── principal-software-engineer.agent.md  # 首席工程師 (Principal Engineer)
-│   │   └── terraform.agent.md    # Terraform 專家 (Terraform Expert)
-│   │
-│   ├── instructions/              # GitHub Copilot 指令 (Instructions)
-│   │   ├── devops-core-principles.instructions.md
-│   │   ├── security-and-owasp.instructions.md
-│   │   ├── performance-optimization.instructions.md
-│   │   ├── spec-driven-workflow-v1.instructions.md
-│   │   ├── memory-bank.instructions.md
-│   │   ├── containerization-docker-best-practices.instructions.md
-│   │   ├── self-explanatory-code-commenting.instructions.md
-│   │   ├── taming-copilot.instructions.md
-│   │   ├── copilot-thought-logging.instructions.md
-│   │   └── markdown.instructions.md
-│   │
-│   └── prompts/                   # 提示範本 (Prompt Templates)
-│       ├── create-readme-comprehensive.prompt.md  # ⭐ 推薦
-│       ├── create-readme-quick.prompt.md
-│       ├── copilot-instructions-blueprint-generator.prompt.md
-│       ├── technology-stack-blueprint-generator.prompt.md
-│       ├── conventional-commit.prompt.md
-│       ├── create-implementation-plan.prompt.md
-│       ├── create-architectural-decision-record.prompt.md
-│       ├── review-and-refactor.prompt.md
-│       └── ... (更多範本 / more templates)
+├── agents/                       # AI 代理配置 (AI Agents Configuration)
+│   ├── arch.agent.md         # 架構設計專家 (Architecture Expert)
+│   ├── context7.agent.md     # 文件查詢專家 (Documentation Expert)
+│   ├── critical-thinking.agent.md  # 批判思考模式 (Critical Thinking)
+│   ├── playwright-tester.agent.md  # 測試自動化 (Test Automation)
+│   ├── prd.agent.md          # PRD 產生器 (PRD Generator)
+│   ├── principal-software-engineer.agent.md  # 首席工程師 (Principal Engineer)
+│   └── terraform.agent.md    # Terraform 專家 (Terraform Expert)
+│
+├── instructions/                 # GitHub Copilot 指令 (Instructions)
+│   ├── devops-core-principles.instructions.md
+│   ├── security-and-owasp.instructions.md
+│   ├── performance-optimization.instructions.md
+│   ├── spec-driven-workflow-v1.instructions.md
+│   ├── memory-bank.instructions.md
+│   ├── containerization-docker-best-practices.instructions.md
+│   ├── self-explanatory-code-commenting.instructions.md
+│   ├── taming-copilot.instructions.md
+│   ├── copilot-thought-logging.instructions.md
+│   └── markdown.instructions.md
+│
+├── prompts/                      # 提示範本 (Prompt Templates)
+│   ├── create-readme-comprehensive.prompt.md  # ⭐ 推薦
+│   ├── create-readme-quick.prompt.md
+│   ├── copilot-instructions-blueprint-generator.prompt.md
+│   ├── technology-stack-blueprint-generator.prompt.md
+│   ├── conventional-commit.prompt.md
+│   ├── create-implementation-plan.prompt.md
+│   ├── create-architectural-decision-record.prompt.md
+│   ├── review-and-refactor.prompt.md
+│   └── ... (更多範本 / more templates)
 │
 ├── docs/                         # 📚 詳細文件 (Detailed Documentation)
 │   ├── README.agents.md         # AI 代理完整清單與使用指南
@@ -548,11 +549,14 @@ my-awesome-copilot/
 
 | 目錄 / Directory | 用途 / Purpose |
 |-----------------|---------------|
-| `.github/agents/` | AI 代理配置檔案,提供專業領域的輔助功能 |
-| `.github/instructions/` | GitHub Copilot 指令,定義程式碼產生規則和最佳實踐 |
-| `.github/prompts/` | 可重用的提示範本,用於常見開發任務 |
+| `agents/` | AI 代理配置檔案,提供專業領域的輔助功能 |
+| `instructions/` | GitHub Copilot 指令,定義程式碼產生規則和最佳實踐 |
+| `prompts/` | 可重用的提示範本,用於常見開發任務 |
 | `docs/` | 專案詳細文件,包含各子系統的完整參考指南 |
 | `temp/` | 暫存工作區,用於實驗和草稿 (不納入版本控制) |
+
+> [!NOTE]
+> 使用時需要將 `agents/`, `instructions/`, `prompts/` 目錄複製或符號連結到 `.github/` 目錄下,以便 GitHub Copilot 自動載入。
 
 ## 快速參考索引
 
@@ -599,7 +603,7 @@ my-awesome-copilot/
 
 ##### spec-driven-workflow-v1.instructions.md
 
-[查看完整檔案](.github/instructions/spec-driven-workflow-v1.instructions.md)
+[查看完整檔案](instructions/spec-driven-workflow-v1.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 規格驅動工作流程 v1 提供結構化的軟體開發方法,確保需求清晰定義、設計仔細規劃、實作徹底記錄和驗證
@@ -620,7 +624,7 @@ my-awesome-copilot/
 
 ##### memory-bank.instructions.md
 
-[查看完整檔案](.github/instructions/memory-bank.instructions.md)
+[查看完整檔案](instructions/memory-bank.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 專案知識、領域知識和偏好設定的記憶庫系統,用於在 AI 會話重置後保持專案上下文
@@ -640,7 +644,7 @@ my-awesome-copilot/
 
 ##### copilot-thought-logging.instructions.md
 
-[查看完整檔案](.github/instructions/copilot-thought-logging.instructions.md)
+[查看完整檔案](instructions/copilot-thought-logging.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 在 Copilot 處理過程中查看其遵循的流程,可編輯以重塑互動或在需要後續追蹤時儲存
@@ -661,7 +665,7 @@ my-awesome-copilot/
 
 ##### self-explanatory-code-commenting.instructions.md
 
-[查看完整檔案](.github/instructions/self-explanatory-code-commenting.instructions.md)
+[查看完整檔案](instructions/self-explanatory-code-commenting.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: GitHub Copilot 編寫註解的指南,以達到自我解釋的程式碼,減少不必要的註解
@@ -683,7 +687,7 @@ my-awesome-copilot/
 
 ##### taming-copilot.instructions.md
 
-[查看完整檔案](.github/instructions/taming-copilot.instructions.md)
+[查看完整檔案](instructions/taming-copilot.instructions.md)
 
 - **適用範圍**: `**` (所有檔案)
 - **描述**: 防止 Copilot 在程式碼庫中造成破壞,保持其受控
@@ -704,7 +708,7 @@ my-awesome-copilot/
 
 ##### markdown.instructions.md
 
-[查看完整檔案](.github/instructions/markdown.instructions.md)
+[查看完整檔案](instructions/markdown.instructions.md)
 
 - **適用範圍**: `**/*.md`
 - **描述**: 文件和內容建立標準
@@ -725,7 +729,7 @@ my-awesome-copilot/
 
 ##### security-and-owasp.instructions.md
 
-[查看完整檔案](.github/instructions/security-and-owasp.instructions.md)
+[查看完整檔案](instructions/security-and-owasp.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 基於 OWASP Top 10 和業界最佳實務的全面安全編碼指令,適用於所有語言和框架
@@ -749,7 +753,7 @@ my-awesome-copilot/
 
 ##### performance-optimization.instructions.md
 
-[查看完整檔案](.github/instructions/performance-optimization.instructions.md)
+[查看完整檔案](instructions/performance-optimization.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 針對所有語言、框架和堆疊的最全面、實用的效能優化指令,涵蓋前端、後端和資料庫最佳實務
@@ -774,7 +778,7 @@ my-awesome-copilot/
 
 ##### devops-core-principles.instructions.md
 
-[查看完整檔案](.github/instructions/devops-core-principles.instructions.md)
+[查看完整檔案](instructions/devops-core-principles.instructions.md)
 
 - **適用範圍**: `*` (所有檔案)
 - **描述**: 涵蓋核心 DevOps 原則、文化 (CALMS) 和關鍵指標 (DORA) 的基礎指令,指導 GitHub Copilot 理解和推廣有效的軟體交付
@@ -801,7 +805,7 @@ my-awesome-copilot/
 
 ##### containerization-docker-best-practices.instructions.md
 
-[查看完整檔案](.github/instructions/containerization-docker-best-practices.instructions.md)
+[查看完整檔案](instructions/containerization-docker-best-practices.instructions.md)
 
 - **適用範圍**: `**/Dockerfile`, `**/Dockerfile.*`, `**/*.dockerfile`, `**/docker-compose*.yml`, `**/docker-compose*.yaml`
 - **描述**: Docker 容器化與映像優化的完整最佳實務指南,涵蓋多階段建構、映像層優化、安全掃描和執行時最佳實務
@@ -834,11 +838,11 @@ my-awesome-copilot/
 
 | 提示範本 | 用途 | 使用方式 |
 |---------|------|----------|
-| **create-readme-comprehensive** ⭐ | 智慧型雙語 README 產生器 | `Follow instructions in [create-readme-comprehensive.prompt.md](file:///.github/prompts/create-readme-comprehensive.prompt.md)` |
-| **create-readme-quick** | 快速英文 README 產生 | `Follow instructions in [create-readme-quick.prompt.md](file:///.github/prompts/create-readme-quick.prompt.md)` |
-| **conventional-commit** | 標準化 Git 提交訊息 | `Follow instructions in [conventional-commit.prompt.md](file:///.github/prompts/conventional-commit.prompt.md)` |
-| **create-implementation-plan** | 建立實作計畫 | `Follow instructions in [create-implementation-plan.prompt.md](file:///.github/prompts/create-implementation-plan.prompt.md)` |
-| **review-and-refactor** | 程式碼審查與重構 | `Follow instructions in [review-and-refactor.prompt.md](file:///.github/prompts/review-and-refactor.prompt.md)` |
+| **create-readme-comprehensive** ⭐ | 智慧型雙語 README 產生器 | `Follow instructions in [create-readme-comprehensive.prompt.md](file:///prompts/create-readme-comprehensive.prompt.md)` |
+| **create-readme-quick** | 快速英文 README 產生 | `Follow instructions in [create-readme-quick.prompt.md](file:///prompts/create-readme-quick.prompt.md)` |
+| **conventional-commit** | 標準化 Git 提交訊息 | `Follow instructions in [conventional-commit.prompt.md](file:///prompts/conventional-commit.prompt.md)` |
+| **create-implementation-plan** | 建立實作計畫 | `Follow instructions in [create-implementation-plan.prompt.md](file:///prompts/create-implementation-plan.prompt.md)` |
+| **review-and-refactor** | 程式碼審查與重構 | `Follow instructions in [review-and-refactor.prompt.md](file:///prompts/review-and-refactor.prompt.md)` |
 
 #### 提示範本分類 / Categories
 
