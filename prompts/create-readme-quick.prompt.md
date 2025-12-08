@@ -16,10 +16,15 @@ You're a senior expert software engineer with extensive experience in open sourc
    - https://raw.githubusercontent.com/sinedied/run-on-output/refs/heads/main/README.md
    - https://raw.githubusercontent.com/sinedied/smoke/refs/heads/main/README.md
 3. Do not overuse emojis, and keep the readme concise and to the point.
-4. Do not include sections like "LICENSE", "CONTRIBUTING", "CHANGELOG", etc. There are dedicated files for those sections.
-5. Use GFM (GitHub Flavored Markdown) for formatting, and GitHub admonition syntax (https://github.com/orgs/community/discussions/16925) where appropriate.
-6. If you find a logo or icon for the project, use it in the readme's header.
-7. **If the project has 10+ sections, include a simple Table of Contents after the header:**
+4. **DO NOT use emojis in headings (H1-H6).** Emojis in headings cause anchor link issues and reduce accessibility. Emojis are acceptable in content, admonitions, lists, and tables.
+   ```markdown
+   ❌ Bad: ### 📋 Features
+   ✅ Good: ### Features
+   ```
+5. Do not include sections like "LICENSE", "CONTRIBUTING", "CHANGELOG", etc. There are dedicated files for those sections.
+6. Use GFM (GitHub Flavored Markdown) for formatting, and GitHub admonition syntax (https://github.com/orgs/community/discussions/16925) where appropriate.
+7. If you find a logo or icon for the project, use it in the readme's header.
+8. **If the project has 10+ sections, include a simple Table of Contents after the header (without emojis in TOC headings):**
    ```markdown
    ## Table of Contents
    

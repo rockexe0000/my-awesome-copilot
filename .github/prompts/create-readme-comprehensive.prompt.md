@@ -390,7 +390,7 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 
 **TOC 格式要求:**
 - **分類式結構 + 快速查找表格** (混合式 Hybrid 格式)
-- 使用 H3 標題分類,配合 emoji 圖標 (📋 ⚙️ 📖 🔧 🚀 📚 🤝 🔍)
+- 使用 H3 標題分類 (**不使用 emoji**)
 - 分類項目僅列出 H3 級別章節
 - 快速查找表格提供任務導向的導航
 - 錨點格式: `#小寫英文slug` 或 `#繁中--english` (雙語標題)
@@ -442,6 +442,33 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 
 ### 配置說明
 ```
+
+**❌ 標題中禁止使用 Emoji:**
+
+> [!IMPORTANT]
+> **為什麼標題不使用 Emoji?**
+> - **錨點問題**: GitHub 對 emoji 的錨點生成規則不一致,可能導致 TOC 連結失效
+> - **可訪問性**: 螢幕閱讀器對 emoji 的處理可能不佳
+> - **專業性**: 技術文件應保持簡潔專業的風格
+> - **一致性**: 避免不同平台對 emoji 的渲染差異
+
+```markdown
+❌ 錯誤範例:
+### 📋 核心文件
+### 🚀 快速開始
+### 🔧 最佳實踐
+
+✅ 正確範例:
+### 核心文件
+### 快速開始
+### 最佳實踐
+```
+
+**✅ 可以使用 Emoji 的地方:**
+- 內文中的狀態指示: ✅ ❌ ⚠️
+- 提示框內容: > [!TIP] 💡
+- 列表項目: - 📖 **完整文件**
+- 表格內容和程式碼註解
 
 #### 4.2 內文內容策略
 
@@ -592,15 +619,15 @@ GitHub 自動為每個標題生成錨點 ID,規則如下:
 ```markdown
 ## 目錄 / Table of Contents
 
-### 📋 核心文件
+### 核心文件
 - [專案概述 / Project Overview](#專案概述--project-overview)
 - [架構設計 / Architecture Design](#架構設計--architecture-design)
 
-### ⚙️ 使用指南
+### 使用指南
 - [安裝 / Installation](#安裝--installation)
 - [配置 / Configuration](#配置--configuration)
 
-### 🔍 快速查找
+### 快速查找
 
 | 我想要... | 前往章節 |
 |----------|----------|

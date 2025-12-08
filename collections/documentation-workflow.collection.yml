@@ -1,0 +1,32 @@
+id: documentation-workflow
+name: Documentation Workflow
+description: "Complete workflow for generating professional documentation including README files, architectural decision records, specifications, and implementation plans."
+tags:
+  - documentation
+  - workflow
+  - readme
+  - adr
+  - specification
+items:
+  - path: prompts/create-readme-comprehensive.prompt.md
+    kind: prompt
+  - path: prompts/create-readme-quick.prompt.md
+    kind: prompt
+  - path: prompts/create-architectural-decision-record.prompt.md
+    kind: prompt
+  - path: prompts/create-implementation-plan.prompt.md
+    kind: prompt
+  - path: prompts/update-implementation-plan.prompt.md
+    kind: prompt
+  - path: prompts/update-specification.prompt.md
+    kind: prompt
+  - path: prompts/documentation-writer.prompt.md
+    kind: prompt
+  - path: prompts/update-oo-component-documentation.prompt.md
+    kind: prompt
+  - path: prompts/update-markdown-file-index.prompt.md
+    kind: prompt
+display:
+  ordering: manual
+  show_badge: true
+  featured: true

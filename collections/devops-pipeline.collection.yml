@@ -1,0 +1,20 @@
+id: devops-pipeline
+name: DevOps Pipeline
+description: "DevOps principles, infrastructure as code tools, and workflow automation for building reliable and scalable deployment pipelines."
+tags:
+  - devops
+  - terraform
+  - infrastructure
+  - automation
+  - cicd
+items:
+  - path: instructions/devops-core-principles.instructions.md
+    kind: instruction
+  - path: agents/terraform.agent.md
+    kind: agent
+  - path: instructions/spec-driven-workflow-v1.instructions.md
+    kind: instruction
+display:
+  ordering: manual
+  show_badge: true
+  featured: true

@@ -1,0 +1,29 @@
+id: meta-development
+name: Meta Development
+description: "Tools and prompts for generating GitHub Copilot resources, including blueprints for instructions, agents, prompts, and README files."
+tags:
+  - meta
+  - generators
+  - blueprints
+  - copilot-resources
+items:
+  - path: prompts/agent-builder.prompt.md
+    kind: prompt
+  - path: prompts/prompt-builder.prompt.md
+    kind: prompt
+  - path: prompts/copilot-instructions-blueprint-generator.prompt.md
+    kind: prompt
+  - path: prompts/readme-blueprint-generator.prompt.md
+    kind: prompt
+  - path: prompts/technology-stack-blueprint-generator.prompt.md
+    kind: prompt
+  - path: prompts/suggest-awesome-github-copilot-instructions.prompt.md
+    kind: prompt
+  - path: prompts/suggest-awesome-github-copilot-prompts.prompt.md
+    kind: prompt
+  - path: prompts/create-agentsmd.prompt.md
+    kind: prompt
+display:
+  ordering: alpha
+  show_badge: true
+  featured: false

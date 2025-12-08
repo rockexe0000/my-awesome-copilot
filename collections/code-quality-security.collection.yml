@@ -1,0 +1,24 @@
+id: code-quality-security
+name: Code Quality & Security
+description: "Best practices, guidelines, and tools for writing secure, performant, and maintainable code across all layers of the application."
+tags:
+  - security
+  - performance
+  - code-quality
+  - best-practices
+  - owasp
+items:
+  - path: instructions/security-and-owasp.instructions.md
+    kind: instruction
+  - path: instructions/performance-optimization.instructions.md
+    kind: instruction
+  - path: instructions/self-explanatory-code-commenting.instructions.md
+    kind: instruction
+  - path: instructions/containerization-docker-best-practices.instructions.md
+    kind: instruction
+  - path: prompts/review-and-refactor.prompt.md
+    kind: prompt
+display:
+  ordering: alpha
+  show_badge: true
+  featured: true
