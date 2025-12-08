@@ -22,7 +22,7 @@ ${AUTO_DETECT_COMPLEXITY=true}      # 自動偵測專案複雜度
 ${MANUAL_COMPLEXITY=null}           # 手動覆寫: SMALL | MEDIUM | LARGE
 
 # 語言策略 (繁中優先 + 英文參考)
-${LANGUAGE_PRIMARY="zh-TW"}         # 主要語言: 繁體中文
+${LANGUAGE_PRIMARY="zh-TW"}         # 主要語言: 繁體中文 (zh-TW)
 ${LANGUAGE_SECONDARY="en"}          # 次要語言: 英文 (參考用)
 ${BILINGUAL_HEADERS=true}           # H1-H3 雙語標題
 
@@ -131,7 +131,7 @@ else:
 - 視覺元素 (badges, diagrams, screenshots) 的平衡
 - 簡潔性與資訊完整度的平衡
 
-**注意:** 範例為英文,但產出內容以繁體中文為主,英文為參考輔助
+**注意:** 範例為英文,但產出內容以繁體中文 (zh-TW) 為主,英文為參考輔助
 
 ---
 
@@ -484,7 +484,7 @@ if has_existing_comprehensive_docs and depth == "Comprehensive":
 - **HTTP 函式庫**: Axios
 ```
 
-**首次出現的專有名詞加註中文:**
+**首次出現的專有名詞加註中文 (zh-TW) :**
 ```markdown
 本專案採用 REST API (表現層狀態轉換應用程式介面) 架構,
 支援 JWT (JSON Web Token) 認證機制。
@@ -1095,7 +1095,7 @@ def calculate_complexity(project_path):
 - [ ] **雙語標題**: H1-H3 格式正確 `{繁中} / {English}`
 - [ ] **程式碼區塊**: 所有區塊已標註語言
 - [ ] **圖表**: Mermaid 語法正確,節點雙語
-- [ ] **專有名詞**: 首次出現已加註中文
+- [ ] **專有名詞**: 首次出現已加註繁體中文 (zh-TW)
 - [ ] **徽章**: 如啟用,已包含且連結正確
 - [ ] **Logo**: 如偵測到,已正確引用
 - [ ] **GFM 特性**: 適當使用 admonitions, tables, task lists
